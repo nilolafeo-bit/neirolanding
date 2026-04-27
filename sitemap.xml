@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://neirolanding.ru/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://neirolanding.ru/#how</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://neirolanding.ru/#works</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://neirolanding.ru/#pricing</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neirolanding.ru/#faq</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://neirolanding.ru/#cta</loc>
+    <priority>0.9</priority>
+  </url>
+</urlset>
