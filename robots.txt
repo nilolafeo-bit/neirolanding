@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /*?utm_
+Disallow: /*?yclid=
+Disallow: /*?gclid=
+
+Sitemap: https://neirolanding.ru/sitemap.xml
+Host: neirolanding.ru

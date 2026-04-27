@@ -43,11 +43,14 @@
 
   <!-- ── Twitter Card ──────────────────────────────────────────── -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@neirolanding" />
   <meta name="twitter:title" content="Лендинг за 2 990 ₽ за 1 день | NeiroLanding" />
   <meta name="twitter:description" content="Продающие лендинги для малого бизнеса под ключ. Бесплатный хостинг навсегда. Готово за 1 день." />
   <meta name="twitter:image" content="https://neirolanding.ru/og-cover.jpg" />
   <meta name="twitter:image:alt" content="NeiroLanding — лендинги под ключ для малого бизнеса" />
+
+  <!-- ── Geo ──────────────────────────────────────────────────── -->
+  <meta name="geo.region" content="RU" />
+  <meta name="geo.placename" content="Россия" />
 
   <!-- ── Schema.org JSON-LD ────────────────────────────────────── -->
   <script type="application/ld+json">
@@ -67,12 +70,14 @@
         }
       },
       {
-        "@type": "LocalBusiness",
+        "@type": "ProfessionalService",
         "@id": "https://neirolanding.ru/#business",
         "name": "NeiroLanding",
         "description": "Создание продающих лендингов для малого бизнеса России под ключ. Цена от 2 990 ₽, готово за 1 день, бесплатный хостинг навсегда.",
         "url": "https://neirolanding.ru/",
-        "priceRange": "₽",
+        "image": "https://neirolanding.ru/og-cover.jpg",
+        "email": "aiinformatorbot@gmail.com",
+        "priceRange": "₽ 2990–7990",
         "areaServed": {
           "@type": "Country",
           "name": "Россия",
@@ -118,7 +123,7 @@
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5",
-          "reviewCount": "127",
+          "reviewCount": "4",
           "bestRating": "5",
           "worstRating": "1"
         },
@@ -175,6 +180,20 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108781023', 'ym');
+
+    ym(108781023, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/108781023" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
   <script>
     tailwind.config = {
       theme: {
@@ -460,7 +479,7 @@
     <!-- Top badge -->
     <div class="inline-flex items-center gap-2 badge-green text-xs font-semibold px-4 py-2 rounded-full mb-8 font-body">
       <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-      Принимаю заказы · Готово за 1 день
+      Принимаем заказы · Готово за 1 день
     </div>
 
     <h1 class="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6">
@@ -471,7 +490,7 @@
     </h1>
 
     <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-body">
-      Создаю современные продающие лендинги с помощью нейросетей. Полный цикл под ключ&nbsp;+&nbsp;<strong class="text-gray-200">бесплатный хостинг навсегда</strong>. Без серверов, без головной боли и без переплат.
+      Создаём современные продающие лендинги с помощью нейросетей. Полный цикл под ключ&nbsp;+&nbsp;<strong class="text-gray-200">бесплатный хостинг навсегда</strong>. Без серверов, без головной боли и без переплат.
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
@@ -569,8 +588,8 @@
 
       <article class="glass-card rounded-2xl p-6 reveal relative" style="transition-delay:0.2s">
         <div class="step-num w-10 h-10 rounded-xl flex items-center justify-center font-display font-black text-green-400 text-lg mb-5">2</div>
-        <h3 class="font-display font-bold text-white text-sm mb-2">Создаю дизайн и контент</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">С помощью нейросетей создаём современный дизайн, пишем продающие тексты за 1–4 часа.</p>
+        <h3 class="font-display font-bold text-white text-sm mb-2">Создаём дизайн и контент</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">С помощью нейросетей собираем современный дизайн и пишем продающие тексты за 1–4 часа.</p>
         <div class="absolute top-8 right-6 text-3xl opacity-20">🤖</div>
       </article>
 
@@ -595,9 +614,9 @@
 <section class="py-20 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-14 reveal">
-      <span class="badge-green text-xs font-semibold px-4 py-1.5 rounded-full font-body inline-block mb-4">Почему я</span>
+      <span class="badge-green text-xs font-semibold px-4 py-1.5 rounded-full font-body inline-block mb-4">Почему мы</span>
       <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">
-        Чем я выигрываю<br/>у всех остальных
+        Чем мы выигрываем<br/>у всех остальных
       </h2>
     </div>
 
@@ -629,7 +648,7 @@
       <article class="glass-card rounded-2xl p-7 reveal group" style="transition-delay:0.25s">
         <div class="w-14 h-14 rounded-2xl bg-green-400/10 border border-green-400/20 flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform">😌</div>
         <h3 class="font-display font-bold text-white text-base mb-2">Полная «незапара»</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">Ты ничего не делаешь. Мы занимаемся всем — от дизайна и текстов до публикации. Просто жди ссылку.</p>
+        <p class="text-gray-500 text-sm leading-relaxed">Вы ничего не делаете. Мы занимаемся всем — от дизайна и текстов до публикации. Просто ждите ссылку.</p>
       </article>
 
       <article class="glass-card rounded-2xl p-7 reveal group" style="transition-delay:0.3s">
@@ -941,7 +960,7 @@
           <span class="faq-icon text-green-400 text-xl font-bold flex-shrink-0">+</span>
         </button>
         <div class="faq-content">
-          <p class="text-gray-400 text-sm leading-relaxed px-6 pb-6">Практически для любого! Уже работали с: <strong class="text-gray-300">парикмахерскими, автосервисами, репетиторами, кафе и ресторанами, клинингом, фестивалями и мероприятиями, магазинами услуг, фотографами, тренерами, стоматологиями, юристами, строителями, отделочниками и сотнями других направлений</strong>. Если сомневаетесь — просто напишите, мы подскажем.</p>
+          <p class="text-gray-400 text-sm leading-relaxed px-6 pb-6">Практически для любого! Уже работали с: <strong class="text-gray-300">парикмахерскими, автосервисами, репетиторами, кафе и ресторанами, клинингом, фестивалями и мероприятиями, магазинами услуг, фотографами, тренерами, стоматологиями, юристами, строителями, отделочниками и сотнями других направлений</strong>. Если сомневаетесь — просто напишите на <a href="mailto:aiinformatorbot@gmail.com" class="text-green-400 hover:underline">aiinformatorbot@gmail.com</a>, подскажем.</p>
         </div>
       </div>
 
@@ -1001,7 +1020,10 @@
         Запустите сайт уже сегодня
       </h2>
       <p class="text-gray-400 text-base max-w-md mx-auto">
-        Оставьте заявку — я свяжусь с вами в течение <strong class="text-white">15 минут</strong> и приступлю к работе сразу после утверждения
+        Оставьте заявку — мы свяжемся с вами в течение <strong class="text-white">15 минут</strong> и приступим к работе сразу после утверждения
+      </p>
+      <p class="text-gray-500 text-sm max-w-md mx-auto mt-3">
+        Или напишите напрямую: <a href="mailto:aiinformatorbot@gmail.com?subject=Заявка%20с%20сайта%20NeiroLanding" class="text-green-400 font-semibold hover:underline">aiinformatorbot@gmail.com</a>
       </p>
     </div>
 
@@ -1071,20 +1093,35 @@
 </section>
 
 <!-- ─── FOOTER ──────────────────────────────────────────────────── -->
-<footer class="border-t border-border py-10 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-    <div class="flex items-center gap-2">
-      <span class="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center text-bg text-sm font-black font-display">NL</span>
-      <span class="font-display font-bold text-white">NeiroLanding</span>
-      <span class="text-gray-700 text-xs ml-2">Сайты для малого бизнеса</span>
+<footer class="border-t border-border py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-start">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center text-bg text-sm font-black font-display">NL</span>
+          <span class="font-display font-bold text-white">NeiroLanding</span>
+        </div>
+        <p class="text-gray-500 text-xs leading-relaxed max-w-xs">Продающие лендинги для малого бизнеса России. Делаем быстро, красиво и без переплат.</p>
+      </div>
+      <nav class="flex flex-col gap-2 text-sm text-gray-500">
+        <span class="text-gray-400 font-display font-semibold text-xs uppercase tracking-wider mb-1">Навигация</span>
+        <a href="#how" class="hover:text-green-400 transition-colors">Как это работает</a>
+        <a href="#works" class="hover:text-green-400 transition-colors">Примеры работ</a>
+        <a href="#pricing" class="hover:text-green-400 transition-colors">Тарифы</a>
+        <a href="#faq" class="hover:text-green-400 transition-colors">FAQ</a>
+        <a href="#cta" class="hover:text-green-400 transition-colors">Заказать</a>
+      </nav>
+      <div class="flex flex-col gap-2 text-sm text-gray-500">
+        <span class="text-gray-400 font-display font-semibold text-xs uppercase tracking-wider mb-1">Контакт</span>
+        <a href="mailto:aiinformatorbot@gmail.com" class="text-green-400 font-semibold hover:underline break-all">aiinformatorbot@gmail.com</a>
+        <span class="text-gray-600 text-xs">Россия · работаем по всей стране</span>
+        <span class="text-gray-600 text-xs">Отвечаем в течение 15 минут в рабочее время</span>
+      </div>
     </div>
-    <nav class="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
-      <a href="#how" class="hover:text-gray-400 transition-colors">Как это работает</a>
-      <a href="#pricing" class="hover:text-gray-400 transition-colors">Тарифы</a>
-      <a href="#faq" class="hover:text-gray-400 transition-colors">FAQ</a>
-      <a href="#cta" class="hover:text-gray-400 transition-colors">Заказать</a>
-    </nav>
-    <p class="text-gray-700 text-xs text-center">© 2026 NeiroLanding. Сайты, которые продают.</p>
+    <div class="mt-10 pt-6 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-gray-600 text-xs">© 2026 NeiroLanding · Сайты, которые продают</p>
+      <p class="text-gray-700 text-xs">Нажимая кнопку заказа, вы соглашаетесь на обработку персональных данных</p>
+    </div>
   </div>
 </footer>
 
@@ -1170,24 +1207,23 @@
     const payload = { name, contact, business, tariff, source: window.location.href, timestamp: new Date().toISOString() };
 
     try {
-      const res = await fetch('https://ai-konfu-u70272.vm.elestio.app/webhook/aifeo-form', {
+      const res = await fetch('https://ai-konfu-u70272.vm.elestio.app/webhook/neirolanding', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
-      if (res.ok || res.status === 200 || res.status === 201 || res.status === 204) {
-        showToast('✅ Заявка принята! Свяжусь с вами в течение 15 минут.');
+      if (res.ok) {
+        showToast('✅ Заявка принята! Свяжемся с вами в течение 15 минут.');
         this.reset();
-        // scroll to top of form to show success
         document.getElementById('cta').scrollIntoView({ behavior: 'smooth' });
+        if (typeof ym === 'function') { ym(108781023, 'reachGoal', 'form_submit_success', { tariff: tariff || 'unspecified' }); }
       } else {
-        throw new Error('Server error');
+        throw new Error('HTTP ' + res.status);
       }
     } catch (err) {
-      // Still show success to user (webhook may return non-200)
-      showToast('✅ Заявка принята! Свяжусь с вами в течение 15 минут.');
-      this.reset();
+      showToast('⚠️ Не удалось отправить. Напишите нам на aiinformatorbot@gmail.com', true);
+      if (typeof ym === 'function') { ym(108781023, 'reachGoal', 'form_submit_error'); }
     } finally {
       btn.disabled = false;
       btnText.textContent = 'Запустить сайт сегодня 🚀';
@@ -1203,6 +1239,20 @@
     } else {
       nav.style.borderBottomColor = 'rgba(36,40,54,0.6)';
     }
+  });
+
+  // Track primary CTA clicks as Yandex.Metrika goals
+  document.querySelectorAll('a[href="#cta"]').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof ym === 'function') { ym(108781023, 'reachGoal', 'cta_click'); }
+    });
+  });
+
+  // Track email contact clicks
+  document.querySelectorAll('a[href^="mailto:"]').forEach(el => {
+    el.addEventListener('click', () => {
+      if (typeof ym === 'function') { ym(108781023, 'reachGoal', 'email_click'); }
+    });
   });
 </script>
 

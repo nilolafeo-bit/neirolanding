@@ -1,0 +1,17 @@
+{
+  "name": "NeiroLanding — лендинги для малого бизнеса",
+  "short_name": "NeiroLanding",
+  "description": "Продающие лендинги под ключ для малого бизнеса России. От 2 990 ₽, готово за 1 день, бесплатный хостинг навсегда.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0B10",
+  "theme_color": "#0A0B10",
+  "lang": "ru",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/favicon-16x16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
