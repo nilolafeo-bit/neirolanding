@@ -193,6 +193,17 @@
     }
   }
 
+  // ─── Pre-select tariff from URL (?tariff=basic|optimal|premium|premium-plus)
+  function initTariffPrefill() {
+    const select = document.getElementById('tariff');
+    if (!select) return;
+    const params = new URLSearchParams(window.location.search);
+    const t = params.get('tariff');
+    if (!t) return;
+    const opt = Array.from(select.options).find((o) => o.value === t);
+    if (opt) select.value = t;
+  }
+
   // ─── Init on DOM ready ───────────────────────────────────────────
   function init() {
     initMobileMenu();
@@ -200,6 +211,7 @@
     initReveal();
     initFaq();
     initForm();
+    initTariffPrefill();
     initMetrikaGoals();
   }
 

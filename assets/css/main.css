@@ -478,6 +478,13 @@ body::before {
   border-color: rgba(74, 222, 128, 0.3);
   transform: translateY(-4px);
 }
+.pricing-premium-plus:hover {
+  border-color: rgba(245, 158, 11, 0.6) !important;
+  box-shadow: 0 0 60px rgba(245, 158, 11, 0.12);
+}
+@media (max-width: 1280px) {
+  .pricing-card { padding: 24px; }
+}
 
 /* ─── Form ──────────────────────────────────────────────────────── */
 .nl-input, .nl-select, .nl-textarea {
