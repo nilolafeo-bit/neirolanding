@@ -71,6 +71,7 @@
   }
 
   // ─── Toast helper ────────────────────────────────────────────────
+  let toastTimer = null;
   function showToast(msg, isError) {
     const toast = document.getElementById('toast');
     if (!toast) {
@@ -80,7 +81,11 @@
     toast.textContent = msg;
     toast.style.background = isError ? '#EF4444' : '#22C55E';
     toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 4000);
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+      toastTimer = null;
+    }, 4000);
   }
 
   // ─── Form submission ─────────────────────────────────────────────
