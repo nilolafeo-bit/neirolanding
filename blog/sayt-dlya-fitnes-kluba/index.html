@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сайт для фитнес-клуба и студии: расписание, запись, клубные карты — гайд 2026 | NeiroLanding</title>
+  <meta name="description" content="Как сделать сайт фитнес-клуба, который записывает на пробное и продаёт клубные карты. Структура, онлайн-запись, SEO, кейс с +5× записей." />
+  <meta name="keywords" content="сайт для фитнес-клуба, сайт фитнес-студии, онлайн-запись фитнес, клубные карты сайт, лендинг тренажёрный зал, сайт йога-студии" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="NeiroLanding" />
+
+  <link rel="canonical" href="https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/" />
+  <link rel="alternate" hreflang="ru" href="https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/" />
+  <link rel="alternate" hreflang="x-default" href="https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="16x16"   href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48"   href="/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="96x96"   href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0A0B10" />
+  <meta name="msapplication-TileColor" content="#0A0B10" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="NeiroLanding" />
+  <meta property="og:title" content="Сайт для фитнес-клуба и студии: расписание, запись, клубные карты — гайд 2026 | NeiroLanding" />
+  <meta property="og:description" content="Как сделать сайт фитнес-клуба, который записывает на пробное и продаёт клубные карты. Структура, онлайн-запись, SEO, кейс с +5× записей." />
+  <meta property="og:image" content="https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="article:published_time" content="2026-05-10T09:00:00+03:00" />
+  <meta property="article:modified_time" content="2026-05-10T09:00:00+03:00" />
+  <meta property="article:section" content="Ниша" />
+  <meta property="article:tag" content="сайт для фитнес-клуба, сайт фитнес-студии, онлайн-запись фитнес, клубные карты сайт, лендинг тренажёрный зал, сайт йога-студии" />
+  <meta property="article:author" content="NeiroLanding" />
+  <meta property="article:publisher" content="https://neirolanding.ru" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Сайт для фитнес-клуба и студии: расписание, запись, клубные карты — гайд 2026 | NeiroLanding" />
+  <meta name="twitter:description" content="Как сделать сайт фитнес-клуба, который записывает на пробное и продаёт клубные карты. Структура, онлайн-запись, SEO, кейс с +5× записей." />
+  <meta name="twitter:image" content="https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/cover.jpg" />
+
+  <meta name="geo.region" content="RU" />
+  <meta name="geo.placename" content="Россия" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Unbounded', 'sans-serif'],
+            body: ['Mulish', 'sans-serif'],
+          },
+          colors: {
+            bg: '#0A0B10',
+            surface: '#12141C',
+            card: '#181B26',
+            border: '#242836',
+            green: { 400: '#4ADE80', 500: '#22C55E', 600: '#16A34A' },
+            accent: '#818CF8',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108781023', 'ym');
+    ym(108781023, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/108781023" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Сайт для фитнес-клуба и студии: расписание, запись, клубные карты — гайд 2026 | NeiroLanding",
+      "description": "Как сделать сайт фитнес-клуба, который записывает на пробное и продаёт клубные карты. Структура, онлайн-запись, SEO, кейс с +5× записей.",
+      "articleSection": "Ниша",
+      "keywords": "сайт для фитнес-клуба, сайт фитнес-студии, онлайн-запись фитнес, клубные карты сайт, лендинг тренажёрный зал, сайт йога-студии",
+      "wordCount": 1720,
+      "timeRequired": "PT10M",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@type": "Organization",
+        "name": "NeiroLanding",
+        "url": "https://neirolanding.ru"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NeiroLanding",
+        "url": "https://neirolanding.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://neirolanding.ru/favicon-512x512.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "datePublished": "2026-05-10T09:00:00+03:00",
+      "dateModified": "2026-05-10T09:00:00+03:00",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/cover.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/"
+      },
+      "url": "https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://neirolanding.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://neirolanding.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Сайт для фитнес-клуба и студии: расписание, запись, клубные карты — гайд 2026",
+          "item": "https://neirolanding.ru/blog/sayt-dlya-fitnes-kluba/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="article-page">
+
+
+<nav class="nl-nav">
+  <div class="nl-nav-inner">
+    <a href="/" class="nl-logo">
+      <span class="nl-logo-mark">NL</span>
+      <span>NeiroLanding</span>
+    </a>
+    <div class="nl-nav-links">
+        <a href="/uslugi/" class="">Услуги</a>
+        <a href="/tarify/" class="">Тарифы</a>
+        <a href="/portfolio/" class="">Портфолио</a>
+        <a href="/blog/" class="active">Блог</a>
+        <a href="/o-nas/" class="">О нас</a>
+        <a href="/faq/" class="">FAQ</a>
+    </div>
+    <a href="/kontakty/" class="nl-nav-cta btn-primary font-display font-semibold text-white" style="padding:10px 20px; border-radius:12px; font-size:14px;">
+      Заказать сайт →
+    </a>
+    <button id="menu-toggle" class="nl-burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="nl-mobile">
+      <a href="/uslugi/">Услуги</a>
+      <a href="/tarify/">Тарифы</a>
+      <a href="/portfolio/">Портфолио</a>
+      <a href="/blog/">Блог</a>
+      <a href="/o-nas/">О нас</a>
+      <a href="/faq/">FAQ</a>
+    <a href="/kontakty/" class="btn-primary nl-mobile-cta font-display font-semibold">Заказать сайт →</a>
+  </div>
+</nav>
+
+
+<nav class="nl-breadcrumbs container" aria-label="Хлебные крошки">
+  <ol>
+    <li><a href="/">Главная</a></li><li><a href="/blog/">Блог</a></li><li>Сайт для фитнес-клуба и студии: расписание, запись, клубные карты — гайд 2026</li>
+  </ol>
+</nav>
+
+
+<article class="section" style="padding-top: 24px;">
+  <div class="container-narrow">
+    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; align-items: center;">
+      <span class="badge-green text-xs font-semibold px-3 py-1 rounded-full font-body">Ниша</span>
+      <span style="color:#6B7280; font-size: 13px;">2026-05-10</span>
+      <span style="color:#6B7280; font-size: 13px;">·</span>
+      <span style="color:#6B7280; font-size: 13px;">10 мин</span>
+    </div>
+
+    <div class="prose">
+      <h1>Сайт для фитнес-клуба и студии 2026</h1>
+
+      <figure style="margin: 24px 0 32px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border);">
+        <img src="/blog/sayt-dlya-fitnes-kluba/cover.jpg" alt="Сайт для фитнес-клуба и студии 2026 — обложка статьи NeiroLanding" width="1200" height="630" loading="eager" decoding="async" style="width: 100%; height: auto; display: block;" />
+      </figure>
+
+<p class="lead" style="font-size: 19px; color: #E5E7EB; margin-bottom: 28px; line-height: 1.65;">
+  Фитнес-клуб — это бизнес рекуррентной выручки: вы продаёте не «одну тренировку», а абонементы и клубные карты на 3, 6, 12 месяцев. Сайт здесь работает как машина для записи на пробные — а пробные превращаются в карты. В этой статье разбираем, как сделать сайт, который реально продаёт карты, и почему 80% сайтов фитнес-клубов в Рунете этого не делают.
+</p>
+
+<h2>Зачем фитнес-клубу сайт в 2026</h2>
+
+<p>Главное заблуждение владельцев небольших фитнес-студий: «у меня же есть Instagram* с расписанием, зачем сайт?» Вот почему сайт критически нужен:</p>
+
+<ul>
+  <li><strong>Запросы вроде «фитнес-клуб рядом», «йога [район]», «тренажёрный зал [метро]»</strong> — это десятки тысяч поисков в месяц в крупном городе. Они идут на сайты, не в соцсети.</li>
+  <li><strong>Клиент приходит подготовленным:</strong> на сайте смотрит расписание, тренеров, цены, фото зала. Принимает решение ещё до звонка администратору.</li>
+  <li><strong>Онлайн-запись на пробное</strong> — конверсия в живой визит у такой записи 60–70%, у заявки «напишите нам» — 15–25%.</li>
+  <li><strong>Продажа карт онлайн</strong>: 12-месячная карта за 36 000 ₽ оплачивается онлайн в один клик. Без этой кнопки — клиент откладывает покупку, и часто не возвращается.</li>
+  <li><strong>SEO даёт «бесплатный» трафик</strong> на годы вперёд. В отличие от платной рекламы — он не заканчивается, когда вы выключили Яндекс.Директ.</li>
+</ul>
+
+<p>* — соцсеть Meta признана экстремистской и запрещена на территории РФ.</p>
+
+<h2>Какая структура сайта работает для фитнес-клуба</h2>
+
+<p>За 5 лет мы сделали 15+ сайтов фитнес-клубам и студиям. Структура, которая стабильно даёт конверсию 8–15% (пробное занятие) и 1,5–3% (покупка карты онлайн), — следующая.</p>
+
+<h3>Секция 1: Hero — пробное за N ₽ или бесплатно</h3>
+
+<ul>
+  <li>Качественное фото зала или групповой тренировки (не сток).</li>
+  <li>Название клуба + позиционирование («Премиальный фитнес-клуб в центре Воронежа», «Йога-студия для начинающих и опытных»).</li>
+  <li>Главный оффер: <strong>«Первая тренировка бесплатно»</strong> или <strong>«Пробная неделя за 990 ₽»</strong>.</li>
+  <li>Кнопка «Записаться на пробное» — крупная, контрастная.</li>
+</ul>
+
+<p>Пробное занятие — это лучший вход в воронку. Гость, который пришёл на пробное, в 60–70% случаев покупает абонемент. Без этой механики сайт продаёт хуже.</p>
+
+<h3>Секция 2: Расписание</h3>
+
+<p>Это <strong>главная страница</strong> сайта фитнес-клуба, важнее даже Hero. Пользователь хочет увидеть: «когда у вас йога», «есть ли тренировка в 19:30 в понедельник».</p>
+
+<p>Что должно быть:</p>
+<ul>
+  <li>Таблица или сетка: дни недели × часы.</li>
+  <li>В каждой ячейке — название занятия, тренер, зал, длительность.</li>
+  <li>Фильтр по типу (силовые, кардио, йога, пилатес, групповые, индивидуальные).</li>
+  <li>Кнопка «Записаться» прямо в ячейке.</li>
+</ul>
+
+<p>В идеале — расписание подтягивается из вашей CRM (Mobifitness, 1С:Фитнес-клуб, FitBase) и обновляется автоматически. Если CRM нет — обновляем руками раз в неделю, тоже работает.</p>
+
+<h3>Секция 3: Тренеры</h3>
+
+<p>5–10 карточек тренеров: фото, имя, специализация, опыт, регалии (КМС, чемпион Москвы по фитнес-бикини), любимое направление.</p>
+
+<p>Это сильно повышает доверие: клиент видит, к кому идёт. Фитнес — это про <strong>отношения с тренером</strong>, не про абстрактный «зал».</p>
+
+<h3>Секция 4: Клубные карты и абонементы</h3>
+
+<p>Прямой прайс. Без «звоните узнавайте» и «индивидуальный расчёт».</p>
+
+<ul>
+  <li>Карта на 1 месяц — 4 500 ₽</li>
+  <li>Карта на 3 месяца — 12 000 ₽ (по 4 000 ₽/мес)</li>
+  <li>Карта на 6 месяцев — 21 000 ₽ (по 3 500 ₽/мес)</li>
+  <li>Карта на 12 месяцев — 36 000 ₽ (по 3 000 ₽/мес)</li>
+  <li>Разовая тренировка — 800 ₽</li>
+  <li>Персональная с тренером — 2 500 ₽</li>
+</ul>
+
+<p>Каждая карта — отдельная карточка с описанием, что входит. Кнопка «Купить онлайн» — обязательно, с подключением Тинькофф или ЮKassa.</p>
+
+<h3>Секция 5: Зал и оборудование</h3>
+
+<p>Фотогалерея: тренажёры, кардио-зона, зал групповых занятий, раздевалки, душевые, паркинг. 10–15 качественных фото. Видео на 30–60 секунд — особенно хорошо.</p>
+
+<h3>Секция 6: Отзывы клиентов</h3>
+
+<p>8–12 отзывов с фото и именами клиентов. Видео-отзывы на 15–30 секунд работают лучше всего — особенно с конкретными результатами («сбросил 14 кг за 4 месяца»).</p>
+
+<h3>Секция 7: Локация и парковка</h3>
+
+<p>Адрес, время работы, виджет Яндекс.Карты с маршрутом. Парковка (бесплатная/платная), ближайшее метро, удобные подъездные пути. Особенно важно для премиум-клубов в центре города.</p>
+
+<h3>Секция 8 (опционально): Дополнительные услуги</h3>
+
+<p>Массаж, сауна, СПА, фитнес-бар, тестирование (биоимпеданс, функциональная диагностика), детский фитнес. Часто это апсейл, который добавляет 10–20% к среднему чеку.</p>
+
+<h2>Онлайн-запись и продажа карт: какие варианты</h2>
+
+<h3>Уровень 1: Простая форма + ручная обработка</h3>
+
+<p>Гость оставляет заявку на пробное, администратор перезванивает, согласовывает время. Подходит для студии на 1–2 тренеров.</p>
+
+<p>Внедрение — 0 ₽, входит во все наши тарифы.</p>
+
+<h3>Уровень 2: Виджет Mobifitness, FitBase или 1С:Фитнес-клуб</h3>
+
+<p>Mobifitness и FitBase — главные CRM для фитнес-клубов в России. У обеих есть виджеты онлайн-записи, которые встраиваются на сайт. Клиент видит реальное расписание с занятыми/свободными местами, сам выбирает время. Запись попадает в CRM клуба.</p>
+
+<p>Стоит от 1 500 ₽/мес за Mobifitness. Мы встроим виджет на сайт за дополнительные 2 000 ₽.</p>
+
+<h3>Уровень 3: Полноценный личный кабинет</h3>
+
+<p>Клиент регистрируется, видит свои карты, остаток тренировок, бронирует места на групповые, оплачивает в один клик. Эту функциональность на статическом сайте не сделать — нужна интеграция с CRM. Делаем на индивидуальном тарифе от 39 990 ₽.</p>
+
+<h2>SEO для фитнес-клуба: локальный поиск</h2>
+
+<p>Фитнес-клуб — локальный бизнес: к вам ходят жители соседних 3–5 районов. Значит, SEO нужно делать <strong>гиперлокальным</strong>.</p>
+
+<h3>Шаг 1: Яндекс.Бизнес и Google Business Profile</h3>
+
+<ul>
+  <li>Заполните адрес, телефон, часы работы, тип занятий (тренажёрный зал, групповые, йога, кроссфит), площадь.</li>
+  <li>Загрузите 25+ фото зала, тренеров, тренировок.</li>
+  <li>Попросите первых 30 клиентов оставить отзывы — это резко выстреливает карточку в локальном поиске.</li>
+</ul>
+
+<h3>Шаг 2: Локальные ключевые слова</h3>
+
+<p>В Title и H1 страниц должны быть:</p>
+<ul>
+  <li>«Фитнес-клуб», «студия», «тренажёрный зал» + специализация (йога, кроссфит, бокс, EMS).</li>
+  <li>Название района, города или метро («на Войковской», «в Кировском районе», «в Воронеже»).</li>
+  <li>Целевая аудитория, если важно («для женщин», «для начинающих», «для подростков»).</li>
+</ul>
+
+<p>Пример Title: «Йога-студия "Прана" на Войковской — начальный, средний, продвинутый уровни».</p>
+
+<h3>Шаг 3: Контент-маркетинг</h3>
+
+<p>Раз в 2–4 недели публикуйте статьи: «Как начать заниматься йогой с нуля», «Программа тренировок для похудения дома», «Что такое EMS-тренировка». Это даёт информационный трафик, который потом конвертируется в пробные.</p>
+
+<p>Информационные запросы вокруг фитнеса — одни из самых популярных в Рунете. По ним легко выйти в топ-10, если хорошо написана статья.</p>
+
+<h2>Реальный кейс: фитнес-клуб FITLAB в Воронеже</h2>
+
+<p>Клиент пришёл с задачей: «Имеем 2 локации, работаем с 2019 года. Поток новых клиентов — 5–8 в месяц на обе локации. Хотим больше». Сделали мультилендинг на тарифе Премиум (24 990 ₽).</p>
+
+<p><strong>Что было до:</strong></p>
+<ul>
+  <li>Сайт-визитка без расписания и записи.</li>
+  <li>5–8 новых клиентов в месяц, в основном через сарафанку.</li>
+  <li>Карты продавались только в клубе, на ресепшен.</li>
+  <li>Заполняемость групповых — 40–50%.</li>
+</ul>
+
+<p><strong>Что сделали:</strong></p>
+<ul>
+  <li>Современный лендинг с расписанием, тренерами, картами, кейсами клиентов.</li>
+  <li>Виджет Mobifitness для онлайн-записи (1 500 ₽/мес).</li>
+  <li>Онлайн-оплата карт через ЮKassa (1,5% комиссия).</li>
+  <li>SEO под «фитнес-клуб в Воронеже», «кроссфит Воронеж», «йога [район]».</li>
+  <li>Запустили блог: 6 статей за первые 3 месяца («Как выбрать фитнес-клуб», «Программа на похудение» и т. д.).</li>
+</ul>
+
+<p><strong>Что стало через 3 месяца:</strong></p>
+<ul>
+  <li>30–40 новых клиентов в месяц — рост в 5 раз.</li>
+  <li>22% карт покупаются онлайн без визита.</li>
+  <li>Заполняемость групповых — 85%.</li>
+  <li>Сайт вышел в топ-5 Яндекса по «фитнес-клуб в Воронеже».</li>
+  <li>Конверсия посетителя сайта в пробное — 11,8%.</li>
+</ul>
+
+<p>Окупаемость сайта — за первые 2 проданных годовых карты.</p>
+
+<h2>Чего не делать</h2>
+
+<ul>
+  <li><strong>Не прятать расписание</strong> за «уточняйте у администратора». 80% людей уходят, не позвонив.</li>
+  <li><strong>Не прятать цены.</strong> Клиент сравнивает 5–7 клубов в районе. Без цены вас исключают из списка.</li>
+  <li><strong>Не использовать сток-фото тренеров.</strong> Это видно, и доверие сразу падает.</li>
+  <li><strong>Не делать сайт без мобильной версии.</strong> 90%+ трафика — с телефона.</li>
+  <li><strong>Не игнорировать пробные занятия.</strong> Без них конверсия в карту падает в 3–5 раз.</li>
+  <li><strong>Не зависеть только от соцсетей.</strong> Их могут заблокировать, аккаунт могут угнать. SEO-трафик с сайта — ваш актив навсегда.</li>
+</ul>
+
+<h2>Сколько стоит запустить сайт фитнес-клуба</h2>
+
+<p>Типичные бюджеты в NeiroLanding:</p>
+<ul>
+  <li><strong>Базовый лендинг</strong> — 2 990 ₽. Hero, расписание, тренеры, цены, запись. Для одной студии на 1–3 тренеров.</li>
+  <li><strong>Оптимальный</strong> — 4 990 ₽. + фотогалерея, блог, кейсы клиентов. Для среднего клуба.</li>
+  <li><strong>Бизнес</strong> — 11 990 ₽. Многостраничный сайт с онлайн-оплатой карт. Для клуба с филиалами или премиум-сегмента.</li>
+</ul>
+
+<p>Дополнительно:</p>
+<ul>
+  <li>Виджет Mobifitness / FitBase — 2 000 ₽ к работам + от 1 500 ₽/мес самим сервисам.</li>
+  <li>Онлайн-оплата карт через ЮKassa — 1 500 ₽ интеграция, комиссия 1,5–2,8%.</li>
+  <li>Хостинг — 0 ₽ навсегда.</li>
+</ul>
+
+<h2>Что дальше</h2>
+
+<p>Если вы владелец фитнес-клуба, студии или зала — у нас есть готовые шаблоны под фитнес-нишу. <a href="/kontakty/">Оставьте заявку</a> — пришлём 2–3 примера сайтов клубов в вашем формате и просчитаем тариф под ваши задачи.</p>
+
+<p>Запускаемся за 1 день. <a href="/portfolio/">Посмотреть портфолио</a> · <a href="/tarify/">Сравнить тарифы</a></p>
+
+    </div>
+
+    <div class="prose-callout" style="margin-top: 48px;">
+      <h3 style="margin: 0 0 12px; font-family: 'Unbounded', sans-serif; color: white; font-size: 18px;">
+        Готовы запустить сайт?
+      </h3>
+      <p style="margin: 0 0 14px; color: #D1D5DB; line-height: 1.6;">
+        Лендинг от 2 990 ₽ за 1 день. Бесплатный хостинг навсегда.
+        3 правки в комплекте.
+      </p>
+      <a href="/kontakty/" class="btn-primary font-display font-semibold text-white" style="display: inline-block; padding: 12px 24px; border-radius: 12px; font-size: 14px;">
+        Оставить заявку →
+      </a>
+    </div>
+  </div>
+</article>
+
+<section class="section">
+  <div class="container">
+    <h2 class="font-display font-bold text-white reveal" style="font-size: 24px; margin-bottom: 24px;">
+      Читайте также
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <a href="/blog/sayt-dlya-onlayn-shkoly/" class="article-card reveal" style="text-decoration: none;">
+        <span class="topic">Ниша</span>
+        <h3>Сайт для онлайн-школы и курсов: программа, спикеры, рассрочка — гайд 2026</h3>
+        <p>Структура продающего сайта онлайн-школы. Программа, спикеры, истории учеников, оплата в рассрочку. С кейсом IT-bootcamp и SEO под Яндекс.</p>
+        <span class="read-more">Читать →</span>
+      </a>
+
+      <a href="/blog/sayt-dlya-parikmaherskoy/" class="article-card reveal" style="text-decoration: none;">
+        <span class="topic">Ниша</span>
+        <h3>Сайт для парикмахерской и салона красоты: пошаговый гайд + примеры 2026</h3>
+        <p>Какие секции должны быть на сайте парикмахерской, как настроить онлайн-запись, что писать в SEO. Реальный пример с конверсией 12%.</p>
+        <span class="read-more">Читать →</span>
+      </a>
+
+      <a href="/blog/seo-malogo-biznesa/" class="article-card reveal" style="text-decoration: none;">
+        <span class="topic">SEO</span>
+        <h3>SEO для малого бизнеса: как попасть в Яндекс и Google за 1–2 месяца</h3>
+        <p>Пошаговый план SEO для малого бизнеса. Локальное продвижение, Яндекс.Бизнес, Google Business Profile, контент-маркетинг. Без бюджета на ссылки.</p>
+        <span class="read-more">Читать →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="nl-footer">
+  <div class="nl-footer-inner">
+    <div class="nl-footer-grid">
+      <div>
+        <a href="/" class="nl-logo" style="margin-bottom:12px;">
+          <span class="nl-logo-mark">NL</span>
+          <span>NeiroLanding</span>
+        </a>
+        <p style="color:#9CA3AF; font-size:14px; line-height:1.6; max-width:340px; margin-top:8px;">
+          Лендинги и сайты под ключ для малого бизнеса России.
+          От 2 990 ₽, готово за 1 день, бесплатный хостинг навсегда.
+        </p>
+        <p style="color:#6B7280; font-size:13px; margin-top:12px;">
+          📧 <a href="mailto:aiinformatorbot@gmail.com">aiinformatorbot@gmail.com</a>
+        </p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="/uslugi/landing/">Лендинги</a></li>
+          <li><a href="/uslugi/sayt/">Многостраничные сайты</a></li>
+          <li><a href="/tarify/">Тарифы</a></li>
+          <li><a href="/portfolio/">Портфолио</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Полезное</h4>
+        <ul>
+          <li><a href="/blog/">Блог</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/o-nas/">О нас</a></li>
+          <li><a href="/kontakty/">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Запустить сайт</h4>
+        <ul>
+          <li><a href="/kontakty/">Оставить заявку</a></li>
+          <li><a href="mailto:aiinformatorbot@gmail.com">Написать на e-mail</a></li>
+        </ul>
+        <a href="/kontakty/" class="btn-primary font-display font-semibold text-white" style="display:inline-block; margin-top:14px; padding:10px 18px; border-radius:12px; font-size:13px;">
+          Заказать за 2 990 ₽ →
+        </a>
+      </div>
+    </div>
+    <div class="nl-footer-bottom">
+      <div>© 2026 NeiroLanding. Все права защищены.</div>
+      <div>
+        Сделано на нейросетях · Хостинг GitHub Pages · Россия
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="/assets/js/main.js" defer></script>
+
+
+</body>
+</html>

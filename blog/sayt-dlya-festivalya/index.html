@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сайт для фестиваля или мероприятия: программа, спикеры, билеты — гайд 2026 | NeiroLanding</title>
+  <meta name="description" content="Как за 2 недели до старта сделать сайт фестиваля, который продаёт билеты. Структура, обратный отсчёт, виджеты продаж, SEO. Кейс NEOFEST." />
+  <meta name="keywords" content="сайт для фестиваля, сайт мероприятия, сайт конференции, продажа билетов сайт, лендинг фестиваль, лендинг конференции" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="NeiroLanding" />
+
+  <link rel="canonical" href="https://neirolanding.ru/blog/sayt-dlya-festivalya/" />
+  <link rel="alternate" hreflang="ru" href="https://neirolanding.ru/blog/sayt-dlya-festivalya/" />
+  <link rel="alternate" hreflang="x-default" href="https://neirolanding.ru/blog/sayt-dlya-festivalya/" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="16x16"   href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48"   href="/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="96x96"   href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0A0B10" />
+  <meta name="msapplication-TileColor" content="#0A0B10" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="NeiroLanding" />
+  <meta property="og:title" content="Сайт для фестиваля или мероприятия: программа, спикеры, билеты — гайд 2026 | NeiroLanding" />
+  <meta property="og:description" content="Как за 2 недели до старта сделать сайт фестиваля, который продаёт билеты. Структура, обратный отсчёт, виджеты продаж, SEO. Кейс NEOFEST." />
+  <meta property="og:image" content="https://neirolanding.ru/blog/sayt-dlya-festivalya/cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://neirolanding.ru/blog/sayt-dlya-festivalya/" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="article:published_time" content="2026-05-07T09:00:00+03:00" />
+  <meta property="article:modified_time" content="2026-05-07T09:00:00+03:00" />
+  <meta property="article:section" content="Ниша" />
+  <meta property="article:tag" content="сайт для фестиваля, сайт мероприятия, сайт конференции, продажа билетов сайт, лендинг фестиваль, лендинг конференции" />
+  <meta property="article:author" content="NeiroLanding" />
+  <meta property="article:publisher" content="https://neirolanding.ru" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Сайт для фестиваля или мероприятия: программа, спикеры, билеты — гайд 2026 | NeiroLanding" />
+  <meta name="twitter:description" content="Как за 2 недели до старта сделать сайт фестиваля, который продаёт билеты. Структура, обратный отсчёт, виджеты продаж, SEO. Кейс NEOFEST." />
+  <meta name="twitter:image" content="https://neirolanding.ru/blog/sayt-dlya-festivalya/cover.jpg" />
+
+  <meta name="geo.region" content="RU" />
+  <meta name="geo.placename" content="Россия" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Unbounded', 'sans-serif'],
+            body: ['Mulish', 'sans-serif'],
+          },
+          colors: {
+            bg: '#0A0B10',
+            surface: '#12141C',
+            card: '#181B26',
+            border: '#242836',
+            green: { 400: '#4ADE80', 500: '#22C55E', 600: '#16A34A' },
+            accent: '#818CF8',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108781023', 'ym');
+    ym(108781023, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/108781023" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Сайт для фестиваля или мероприятия: программа, спикеры, билеты — гайд 2026 | NeiroLanding",
+      "description": "Как за 2 недели до старта сделать сайт фестиваля, который продаёт билеты. Структура, обратный отсчёт, виджеты продаж, SEO. Кейс NEOFEST.",
+      "articleSection": "Ниша",
+      "keywords": "сайт для фестиваля, сайт мероприятия, сайт конференции, продажа билетов сайт, лендинг фестиваль, лендинг конференции",
+      "wordCount": 1750,
+      "timeRequired": "PT10M",
+      "inLanguage": "ru-RU",
+      "author": {
+        "@type": "Organization",
+        "name": "NeiroLanding",
+        "url": "https://neirolanding.ru"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NeiroLanding",
+        "url": "https://neirolanding.ru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://neirolanding.ru/favicon-512x512.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "datePublished": "2026-05-07T09:00:00+03:00",
+      "dateModified": "2026-05-07T09:00:00+03:00",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://neirolanding.ru/blog/sayt-dlya-festivalya/cover.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://neirolanding.ru/blog/sayt-dlya-festivalya/"
+      },
+      "url": "https://neirolanding.ru/blog/sayt-dlya-festivalya/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://neirolanding.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://neirolanding.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Сайт для фестиваля или мероприятия: программа, спикеры, билеты — гайд 2026",
+          "item": "https://neirolanding.ru/blog/sayt-dlya-festivalya/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="article-page">
+
+
+<nav class="nl-nav">
+  <div class="nl-nav-inner">
+    <a href="/" class="nl-logo">
+      <span class="nl-logo-mark">NL</span>
+      <span>NeiroLanding</span>
+    </a>
+    <div class="nl-nav-links">
+        <a href="/uslugi/" class="">Услуги</a>
+        <a href="/tarify/" class="">Тарифы</a>
+        <a href="/portfolio/" class="">Портфолио</a>
+        <a href="/blog/" class="active">Блог</a>
+        <a href="/o-nas/" class="">О нас</a>
+        <a href="/faq/" class="">FAQ</a>
+    </div>
+    <a href="/kontakty/" class="nl-nav-cta btn-primary font-display font-semibold text-white" style="padding:10px 20px; border-radius:12px; font-size:14px;">
+      Заказать сайт →
+    </a>
+    <button id="menu-toggle" class="nl-burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="nl-mobile">
+      <a href="/uslugi/">Услуги</a>
+      <a href="/tarify/">Тарифы</a>
+      <a href="/portfolio/">Портфолио</a>
+      <a href="/blog/">Блог</a>
+      <a href="/o-nas/">О нас</a>
+      <a href="/faq/">FAQ</a>
+    <a href="/kontakty/" class="btn-primary nl-mobile-cta font-display font-semibold">Заказать сайт →</a>
+  </div>
+</nav>
+
+
+<nav class="nl-breadcrumbs container" aria-label="Хлебные крошки">
+  <ol>
+    <li><a href="/">Главная</a></li><li><a href="/blog/">Блог</a></li><li>Сайт для фестиваля или мероприятия: программа, спикеры, билеты — гайд 2026</li>
+  </ol>
+</nav>
+
+
+<article class="section" style="padding-top: 24px;">
+  <div class="container-narrow">
+    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; align-items: center;">
+      <span class="badge-green text-xs font-semibold px-3 py-1 rounded-full font-body">Ниша</span>
+      <span style="color:#6B7280; font-size: 13px;">2026-05-07</span>
+      <span style="color:#6B7280; font-size: 13px;">·</span>
+      <span style="color:#6B7280; font-size: 13px;">10 мин</span>
+    </div>
+
+    <div class="prose">
+      <h1>Сайт для фестиваля и мероприятия</h1>
+
+      <figure style="margin: 24px 0 32px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border);">
+        <img src="/blog/sayt-dlya-festivalya/cover.jpg" alt="Сайт для фестиваля и мероприятия — обложка статьи NeiroLanding" width="1200" height="630" loading="eager" decoding="async" style="width: 100%; height: auto; display: block;" />
+      </figure>
+
+<p class="lead" style="font-size: 19px; color: #E5E7EB; margin-bottom: 28px; line-height: 1.65;">
+  Сайт фестиваля или конференции — это спринт. У вас есть 2–4 недели до даты, чтобы за этот период собрать максимум регистраций и продать все билеты. В этой статье разбираем структуру такого сайта, какие виджеты продаж работают, как настроить обратный отсчёт и SEO. С кейсом digital-фестиваля NEOFEST, который продал 400 билетов за первые 3 дня после запуска лендинга.
+</p>
+
+<h2>Особенность ниши: время</h2>
+
+<p>У сайта парикмахерской или фитнес-клуба нет «дедлайна» — он работает 365 дней в году. У сайта фестиваля дедлайн жёсткий: <strong>день мероприятия</strong>. После него сайт либо архивируется, либо становится «теперь смотрите следующий поток».</p>
+
+<p>Это меняет приоритеты:</p>
+<ul>
+  <li><strong>Скорость запуска</strong> важнее «идеальной» структуры. Лучше «не очень» сайт за 3 дня, чем «идеальный» через 3 недели.</li>
+  <li><strong>Конверсия в покупку билета</strong> — главная метрика. Не «время на странице», не «брендинг», а билеты.</li>
+  <li><strong>Срочность</strong> — главный инструмент. Обратный отсчёт, «осталось 12 билетов», «цена вырастет через 5 дней».</li>
+  <li><strong>Реклама</strong> запускается параллельно с сайтом — нет времени на «SEO через 2 месяца».</li>
+</ul>
+
+<h2>Структура сайта фестиваля</h2>
+
+<p>Мы сделали 10+ сайтов фестивалям, форумам, конференциям, мастер-классам. Структура, которая стабильно даёт конверсию 4–12% в покупку билета, — следующая.</p>
+
+<h3>Секция 1: Hero — что, когда, где + обратный отсчёт</h3>
+
+<ul>
+  <li><strong>Название фестиваля</strong> — большим шрифтом.</li>
+  <li><strong>Дата и место</strong> — на 1-м экране, без скроллинга («15 июня 2026, Москва, Loft Hall»).</li>
+  <li><strong>Тема / суть</strong>: о чём фестиваль («Digital-фестиваль про AR, нейросети и творчество», «Конференция о DevOps и SRE»).</li>
+  <li><strong>Обратный отсчёт</strong>: «До старта осталось 12 дней 14 часов».</li>
+  <li><strong>Кнопка «Купить билет»</strong> — крупная, контрастная, на 1-м экране.</li>
+</ul>
+
+<p>Обратный отсчёт — это <strong>не банальный элемент</strong>, он реально увеличивает конверсию на 15–30%. Когда пользователь видит «5 дней до старта», он принимает решение быстрее.</p>
+
+<h3>Секция 2: Программа</h3>
+
+<p>Это <strong>главная страница</strong> сайта фестиваля. 70% посетителей пришли посмотреть, что будет в программе.</p>
+
+<p>Что должно быть:</p>
+<ul>
+  <li>Расписание по дням / трекам / залам.</li>
+  <li>В каждой ячейке — название выступления, спикер, краткое описание (1 предложение).</li>
+  <li>Возможность переключения между треками / залами / днями.</li>
+</ul>
+
+<p>Если фестиваль однодневный — простой timeline. Если многодневный или с параллельными треками — сетка с фильтрами.</p>
+
+<h3>Секция 3: Спикеры</h3>
+
+<p>10–30 карточек: фото, ФИО, должность, тема выступления. Главное правило — <strong>должность с упоминанием известных компаний</strong>: «Head of Design в Mail.ru», «Lead Researcher в Yandex Research», «CEO of Awesome Studio». Это резко повышает доверие и конверсию.</p>
+
+<p>Если спикеров много (50+), сделайте поиск или фильтр по треку.</p>
+
+<h3>Секция 4: Билеты</h3>
+
+<p>3–5 категорий: Standard, Premium, VIP, Online, Student. Каждая — отдельная карточка с тем, что входит:</p>
+
+<ul>
+  <li><strong>Standard</strong> — доступ ко всем выступлениям, кофе-брейки.</li>
+  <li><strong>Premium</strong> — Standard + обед, нетворкинг-зона.</li>
+  <li><strong>VIP</strong> — Premium + ужин со спикерами, фотозона, мерч.</li>
+  <li><strong>Online</strong> — трансляция, запись.</li>
+  <li><strong>Student</strong> — Standard со скидкой 50%, нужен билет студента.</li>
+</ul>
+
+<p>Цены — обязательно. С отметкой «осталось N билетов» — резко повышает срочность.</p>
+
+<h3>Секция 5: Партнёры и площадка</h3>
+
+<p>Логотипы спонсоров, информационных партнёров, площадки. Это работает в двух направлениях: повышает доверие у посетителей и привлекает новых партнёров на следующий поток фестиваля.</p>
+
+<h3>Секция 6: Прошлые мероприятия (для повторных событий)</h3>
+
+<p>Если это уже не первый поток — добавьте 6–12 фото с прошлых фестивалей, видео-роллик, статистику («2 500 участников в 2025, 80 спикеров, 12 треков»).</p>
+
+<h3>Секция 7: FAQ</h3>
+
+<p>10–20 вопросов: «Как пройти на площадку», «Можно ли с детьми», «Будет ли запись», «Что делать, если не смогу прийти», «Какой дресс-код». Снимает 80% возражений.</p>
+
+<h3>Секция 8: Контакты и площадка на карте</h3>
+
+<p>Адрес, виджет Яндекс.Карты, телефон или Telegram-бот для вопросов. Информация про парковку, метро, такси.</p>
+
+<h2>Продажа билетов: какие виджеты</h2>
+
+<h3>Уровень 1: Простая форма + ручная отправка билетов</h3>
+
+<p>Гость оставляет заявку, оплачивает по реквизитам или СБП. Вы отправляете билет на email. Подходит для маленьких мероприятий (до 200 участников).</p>
+
+<p>Внедрение — 0 ₽, входит во все наши тарифы.</p>
+
+<h3>Уровень 2: Виджет Timepad, Qtickets или Radario</h3>
+
+<p>Timepad — самый популярный сервис продажи билетов в России. Виджет встраивается на сайт, гость покупает билет в один клик, получает на email с QR-кодом. На входе организаторы сканируют QR.</p>
+
+<p>Комиссия Timepad — 5% от стоимости билета. Внедрение — 990 ₽ к работам.</p>
+
+<p>Альтернативы: Qtickets, Radario — комиссии 4–8%, функционал примерно одинаковый.</p>
+
+<h3>Уровень 3: Полный личный кабинет + интеграция с CRM</h3>
+
+<p>Для крупных фестивалей (5 000+ участников): личный кабинет участника, история заказов, перевод билета другому, апсейлы (купить мерч, ужин со спикером). Делаем на индивидуальном тарифе от 39 990 ₽.</p>
+
+<h2>Срочность: как заставить покупать сейчас</h2>
+
+<p>В нише фестивалей <strong>срочность</strong> — главный инструмент конверсии. Что реально работает:</p>
+
+<ul>
+  <li><strong>Обратный отсчёт</strong> до старта мероприятия — +15–30% к конверсии.</li>
+  <li><strong>Ступенчатые цены</strong>: «Early Bird до 1 апреля — 3 990 ₽», «До 1 мая — 5 990 ₽», «На входе — 7 990 ₽». Каждый «дедлайн» — это всплеск продаж в последние 3–5 дней.</li>
+  <li><strong>Остаток билетов</strong>: «Осталось 12 билетов категории Premium». Если можно — реальный счётчик, если нет — обновляйте вручную.</li>
+  <li><strong>Социальные доказательства</strong>: «Уже купили 1 247 человек». Особенно работает в последние дни перед мероприятием.</li>
+</ul>
+
+<p>Главное правило: <strong>не врать</strong>. Если написано «осталось 12 билетов», и через неделю всё ещё 12 — конверсия падает в 0.</p>
+
+<h2>SEO для фестиваля</h2>
+
+<p>SEO у разового фестиваля «низкое» (нет времени на 2–3 месяца оптимизации), но для повторных мероприятий — золото:</p>
+
+<ul>
+  <li>Старая ссылка на «Фестиваль NEOFEST 2025» сохраняется в Яндексе на годы.</li>
+  <li>Когда вы запускаете NEOFEST 2026, поисковики уже знают «вы это вы».</li>
+  <li>Запросы «digital-фестиваль 2026», «конференция [тема] [город]» — каждый поток получает «бесплатный» трафик из этого.</li>
+</ul>
+
+<p>Что делать:</p>
+<ul>
+  <li>Сохраняйте сайт прошлых лет (можно как раздел `/2025/`, `/2024/`).</li>
+  <li>Добавляйте «Архив» со всеми спикерами и видео-записями (можно платным).</li>
+  <li>Делайте блог: «Главные тезисы NEOFEST 2025», «Топ-10 выступлений конференции», «Тренды индустрии после фестиваля».</li>
+</ul>
+
+<h2>Реальный кейс: digital-фестиваль NEOFEST</h2>
+
+<p>Клиент пришёл с задачей: «3 недели до фестиваля. Хотим сайт, который продаст 1 500 билетов». Мы сделали лендинг + интегрировали Timepad за 5 дней.</p>
+
+<p><strong>Что было до:</strong></p>
+<ul>
+  <li>Готовая программа на 60 спикеров и 12 треков.</li>
+  <li>Договор с площадкой, бюджет на рекламу 800 000 ₽.</li>
+  <li>Нет сайта, нет канала продаж билетов.</li>
+</ul>
+
+<p><strong>Что сделали за 5 дней:</strong></p>
+<ul>
+  <li>Лендинг: Hero с обратным отсчётом, программа по 3 трекам, 60 спикеров с фото и должностями, 4 категории билетов.</li>
+  <li>Интегрировали Timepad для продаж.</li>
+  <li>Подключили Яндекс.Метрику, цели на покупку.</li>
+  <li>SEO-минимум под брендовые запросы и «digital-фестиваль 2026».</li>
+  <li>OG-картинка для соцсетей.</li>
+</ul>
+
+<p><strong>Что было после запуска:</strong></p>
+<ul>
+  <li>За первые 3 дня — 400 билетов продано.</li>
+  <li>За месяц до мероприятия — 1 720 билетов (план перевыполнен на 14%).</li>
+  <li>Конверсия лендинга «посетитель → покупка»: 8,4%.</li>
+  <li>Средний чек: 5 800 ₽.</li>
+  <li>22% покупок — Premium, 11% — VIP.</li>
+</ul>
+
+<p>Окупаемость лендинга — за первые 2 часа после запуска рекламы.</p>
+
+<h2>Чего не делать</h2>
+
+<ul>
+  <li><strong>Не «прятать» программу.</strong> Гость не купит билет, не увидев, что будет.</li>
+  <li><strong>Не делать сайт без обратного отсчёта.</strong> Это +15–30% к конверсии буквально за 5 минут вставки.</li>
+  <li><strong>Не указывать только Standard.</strong> Без Premium/VIP средний чек ниже на 30–50%.</li>
+  <li><strong>Не врать про «осталось N билетов».</strong> Это рушит доверие быстрее всего.</li>
+  <li><strong>Не запускать без аналитики.</strong> Без Метрики и целей вы не поймёте, что не работает.</li>
+  <li><strong>Не выключать сайт сразу после мероприятия.</strong> Сохраните как архив — следующий поток получит SEO-трафик бесплатно.</li>
+</ul>
+
+<h2>Сколько стоит сайт фестиваля</h2>
+
+<p>Типичные бюджеты в NeiroLanding:</p>
+<ul>
+  <li><strong>Лендинг небольшого мероприятия</strong> — 4 990 ₽. Hero, программа, спикеры, билеты, FAQ, форма. До 500 участников.</li>
+  <li><strong>Лендинг крупного фестиваля</strong> — 11 990 ₽. + многотрековая программа, обратный отсчёт, ступенчатые цены, OG-картинки. 500–5 000 участников.</li>
+  <li><strong>Сайт серии мероприятий</strong> — 24 990 ₽. Главная + страницы каждого фестиваля + архив + личный кабинет. Для регулярно проводимых событий.</li>
+</ul>
+
+<p>Дополнительно:</p>
+<ul>
+  <li>Интеграция Timepad / Qtickets — 990 ₽.</li>
+  <li>СБП-оплата на сайте напрямую — 1 500 ₽.</li>
+  <li>OG-картинки и социальные превью — 990 ₽.</li>
+  <li>Хостинг — 0 ₽ навсегда.</li>
+</ul>
+
+<h2>Запускаемся быстро</h2>
+
+<p>Если вы организуете фестиваль, конференцию, мастер-класс или городской праздник — мы сделаем лендинг за 1–3 дня. Время критично: с каждым потерянным днём вы теряете билеты.</p>
+
+<p><a href="/kontakty/">Оставьте заявку</a> — пришлём 2–3 примера сайтов фестивалей из портфолио и просчитаем тариф.</p>
+
+<p><a href="/portfolio/">Посмотреть портфолио</a> · <a href="/tarify/">Сравнить тарифы</a></p>
+
+    </div>
+
+    <div class="prose-callout" style="margin-top: 48px;">
+      <h3 style="margin: 0 0 12px; font-family: 'Unbounded', sans-serif; color: white; font-size: 18px;">
+        Готовы запустить сайт?
+      </h3>
+      <p style="margin: 0 0 14px; color: #D1D5DB; line-height: 1.6;">
+        Лендинг от 2 990 ₽ за 1 день. Бесплатный хостинг навсегда.
+        3 правки в комплекте.
+      </p>
+      <a href="/kontakty/" class="btn-primary font-display font-semibold text-white" style="display: inline-block; padding: 12px 24px; border-radius: 12px; font-size: 14px;">
+        Оставить заявку →
+      </a>
+    </div>
+  </div>
+</article>
+
+<section class="section">
+  <div class="container">
+    <h2 class="font-display font-bold text-white reveal" style="font-size: 24px; margin-bottom: 24px;">
+      Читайте также
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <a href="/blog/sayt-dlya-onlayn-shkoly/" class="article-card reveal" style="text-decoration: none;">
+        <span class="topic">Ниша</span>
+        <h3>Сайт для онлайн-школы и курсов: программа, спикеры, рассрочка — гайд 2026</h3>
+        <p>Структура продающего сайта онлайн-школы. Программа, спикеры, истории учеников, оплата в рассрочку. С кейсом IT-bootcamp и SEO под Яндекс.</p>
+        <span class="read-more">Читать →</span>
+      </a>
+
+      <a href="/blog/landing-ili-sayt/" class="article-card reveal" style="text-decoration: none;">
+        <span class="topic">Стратегия</span>
+        <h3>Лендинг или многостраничный сайт: что выбрать малому бизнесу в 2026</h3>
+        <p>Сравниваем лендинг и многостраничный сайт по конверсии, бюджету, SEO и срокам. Объясняем, какой вариант подходит парикмахерским, автосервиса…</p>
+        <span class="read-more">Читать →</span>
+      </a>
+
+      <a href="/blog/skolko-stoit-sayt-2026/" class="article-card reveal" style="text-decoration: none;">
+        <span class="topic">Цены</span>
+        <h3>Сколько стоит создать сайт в 2026 году: реальные цены и из чего они складываются</h3>
+        <p>Реальные цены на разработку сайтов в 2026: фрилансер, конструктор, агентство, нейросетевые сервисы. Из чего складывается стоимость и где пер…</p>
+        <span class="read-more">Читать →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="nl-footer">
+  <div class="nl-footer-inner">
+    <div class="nl-footer-grid">
+      <div>
+        <a href="/" class="nl-logo" style="margin-bottom:12px;">
+          <span class="nl-logo-mark">NL</span>
+          <span>NeiroLanding</span>
+        </a>
+        <p style="color:#9CA3AF; font-size:14px; line-height:1.6; max-width:340px; margin-top:8px;">
+          Лендинги и сайты под ключ для малого бизнеса России.
+          От 2 990 ₽, готово за 1 день, бесплатный хостинг навсегда.
+        </p>
+        <p style="color:#6B7280; font-size:13px; margin-top:12px;">
+          📧 <a href="mailto:aiinformatorbot@gmail.com">aiinformatorbot@gmail.com</a>
+        </p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="/uslugi/landing/">Лендинги</a></li>
+          <li><a href="/uslugi/sayt/">Многостраничные сайты</a></li>
+          <li><a href="/tarify/">Тарифы</a></li>
+          <li><a href="/portfolio/">Портфолио</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Полезное</h4>
+        <ul>
+          <li><a href="/blog/">Блог</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/o-nas/">О нас</a></li>
+          <li><a href="/kontakty/">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Запустить сайт</h4>
+        <ul>
+          <li><a href="/kontakty/">Оставить заявку</a></li>
+          <li><a href="mailto:aiinformatorbot@gmail.com">Написать на e-mail</a></li>
+        </ul>
+        <a href="/kontakty/" class="btn-primary font-display font-semibold text-white" style="display:inline-block; margin-top:14px; padding:10px 18px; border-radius:12px; font-size:13px;">
+          Заказать за 2 990 ₽ →
+        </a>
+      </div>
+    </div>
+    <div class="nl-footer-bottom">
+      <div>© 2026 NeiroLanding. Все права защищены.</div>
+      <div>
+        Сделано на нейросетях · Хостинг GitHub Pages · Россия
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="/assets/js/main.js" defer></script>
+
+
+</body>
+</html>
