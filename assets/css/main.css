@@ -557,11 +557,29 @@ body::before {
   padding: 24px;
   transition: all 0.3s ease;
   height: 100%;
+  overflow: hidden;
 }
 .article-card:hover {
   border-color: rgba(74, 222, 128, 0.3);
   transform: translateY(-4px);
 }
+.article-card.has-cover { padding: 0; }
+.article-card .cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  background: #0F1218;
+  border-bottom: 1px solid rgba(36, 40, 54, 0.6);
+  transition: opacity 0.3s ease;
+}
+.article-card.has-cover .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 24px 24px;
+}
+.article-card:hover .cover { opacity: 0.92; }
 .article-card .topic {
   display: inline-block;
   font-size: 11px;
