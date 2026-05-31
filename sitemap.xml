@@ -62,9 +62,27 @@
   </url>
   <url>
     <loc>https://neirolanding.ru/blog/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://neirolanding.ru/blog/besplatnyy-generator-lendinga/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://neirolanding.ru/blog/struktura-prodayushchego-lendinga/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://neirolanding.ru/blog/teksty-dlya-lendinga/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://neirolanding.ru/blog/sayt-dlya-kafe/</loc>

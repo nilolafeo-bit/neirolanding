@@ -272,6 +272,52 @@
     }
     .regen-btn:hover { transform: translateY(-2px); border-color: #6366f1; }
 
+    /* ---------- ПЛАШКИ-ДИСКЛЕЙМЕРЫ ---------- */
+    .gen-note {
+      display: flex; gap: 11px; align-items: flex-start;
+      margin-top: 18px; padding: 14px 16px;
+      background: rgba(99,102,241,.08); border: 1px solid rgba(99,102,241,.22);
+      border-radius: 12px; font-size: 13.5px; color: #b9b9c6; line-height: 1.5;
+    }
+    .gen-note .ic { font-size: 17px; line-height: 1.3; }
+    .gen-note b { color: #e4e4e7; font-weight: 600; }
+
+    .result-note {
+      max-width: 1180px; margin: 0 auto; padding: 0 16px;
+    }
+    .result-note > div {
+      display: flex; gap: 11px; align-items: flex-start;
+      padding: 13px 16px; border-radius: 12px;
+      background: rgba(245,158,11,.10); border: 1px solid rgba(245,158,11,.3);
+      color: #fbd9a4; font-size: 13.5px; line-height: 1.5;
+    }
+    .result-note .ic { font-size: 17px; }
+    .result-note b { color: #fde9c8; font-weight: 600; }
+
+    .real-pitch {
+      max-width: 760px; margin: 8px auto 0; padding: 28px 24px;
+      text-align: center; background: #141414; border: 1px solid #232323; border-radius: 18px;
+    }
+    .real-pitch h3 {
+      font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px; margin: 0 0 10px;
+      background: linear-gradient(135deg, #ffffff 40%, #c4b5fd); -webkit-background-clip: text;
+      background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .real-pitch p { margin: 0 0 18px; color: #a1a1aa; font-size: 15px; line-height: 1.6; }
+    .real-pitch .pitch-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 0 0 20px; }
+    .real-pitch .pitch-list span {
+      font-size: 13px; color: #d4d4d8; background: #0f0f0f; border: 1px solid #2a2a2a;
+      padding: 7px 13px; border-radius: 999px;
+    }
+    .real-pitch a {
+      display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #fff;
+      font-weight: 700; font-family: 'Unbounded', sans-serif; font-size: 15px;
+      padding: 14px 28px; border-radius: 13px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      box-shadow: 0 8px 24px rgba(99,102,241,.28); transition: transform .2s, box-shadow .2s;
+    }
+    .real-pitch a:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(168,85,247,.5); }
+
     /* ============================================================
        ШАБЛОН 1 — «МИНИМАЛ» (светлый)
        ============================================================ */
@@ -501,6 +547,11 @@
       </div>
 
       <button type="submit" class="gen-submit">⚡ Сгенерировать черновик</button>
+
+      <div class="gen-note">
+        <span class="ic">ℹ️</span>
+        <span>Это <b>упрощённый макет-черновик</b> для наглядности — тексты берутся из готовых заготовок. Реальный сайт под ваш бизнес мы делаем <b>индивидуально</b>: уникальный дизайн, ваши фото и цены, аккуратная вёрстка и проработка до мелочей.</span>
+      </div>
     </form>
   </main>
 
@@ -528,9 +579,29 @@
       </div>
     </div>
 
+    <div class="result-note">
+      <div>
+        <span class="ic">✏️</span>
+        <span>Перед вами <b>упрощённый макет-черновик</b> с примерными текстами — чтобы показать структуру и идею. Готовый сайт для клиента мы делаем <b>под заказ</b>: индивидуальный дизайн, ваши фото, цены и услуги, чистая адаптивная вёрстка — красиво и правильно.</span>
+      </div>
+    </div>
+
     <div class="preview-stage">
       <div id="preview"></div>
       <div class="watermark" id="watermark"></div>
+    </div>
+
+    <div class="real-pitch">
+      <h3>Нравится? Так это всего лишь черновик</h3>
+      <p>Под ваш бизнес мы соберём настоящий сайт — с вашим стилем, фотографиями, реальными услугами и ценами. Готово за 1 день, бесплатный хостинг навсегда.</p>
+      <div class="pitch-list">
+        <span>🎨 Уникальный дизайн</span>
+        <span>📱 Адаптив под телефон</span>
+        <span>⚡ Быстрая загрузка</span>
+        <span>🔍 Настройка под SEO</span>
+        <span>🛠️ Правки до результата</span>
+      </div>
+      <a href="https://neirolanding.ru/" target="_blank" rel="noopener">Заказать сайт под ключ от 2 990 ₽ →</a>
     </div>
 
     <div class="regen-wrap">
