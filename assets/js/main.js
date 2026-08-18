@@ -9,14 +9,30 @@
   const WEBHOOK_URL = 'https://ai-konfu-u70272.vm.elestio.app/webhook/neirolanding';
   const METRIKA_ID = 108781023;
 
+  function goal(name, params) {
+    if (typeof window.ym === 'function') window.ym(METRIKA_ID, 'reachGoal', name, params);
+  }
+
   // ─── Mobile menu toggle ──────────────────────────────────────────
   function initMobileMenu() {
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('mobile-menu');
+    const nav = document.querySelector('.nl-nav');
     if (!toggle || !menu) return;
-    toggle.addEventListener('click', () => menu.classList.toggle('open'));
-    menu.querySelectorAll('a').forEach((a) => {
-      a.addEventListener('click', () => menu.classList.remove('open'));
+
+    function setOpen(open) {
+      menu.classList.toggle('open', open);
+      if (nav) nav.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    toggle.addEventListener('click', () => setOpen(!menu.classList.contains('open')));
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        setOpen(false);
+        toggle.focus();
+      }
     });
   }
 
@@ -24,10 +40,7 @@
   function initNavScroll() {
     const nav = document.querySelector('.nl-nav');
     if (!nav) return;
-    const onScroll = () => {
-      if (window.scrollY > 40) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    };
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
@@ -36,6 +49,10 @@
   function initReveal() {
     const els = document.querySelectorAll('.reveal');
     if (!els.length) return;
+    if (!('IntersectionObserver' in window)) {
+      els.forEach((el) => el.classList.add('visible'));
+      return;
+    }
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -45,7 +62,7 @@
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
     );
     els.forEach((el) => io.observe(el));
   }
@@ -54,18 +71,11 @@
   function initFaq() {
     document.querySelectorAll('[data-faq]').forEach((item) => {
       const btn = item.querySelector('.faq-btn');
-      const content = item.querySelector('.faq-content');
-      const icon = item.querySelector('.faq-icon');
-      if (!btn || !content) return;
+      if (!btn) return;
+
       btn.addEventListener('click', () => {
         const open = item.classList.toggle('open');
-        if (open) {
-          content.style.maxHeight = content.scrollHeight + 'px';
-          if (icon) icon.style.transform = 'rotate(45deg)';
-        } else {
-          content.style.maxHeight = '0px';
-          if (icon) icon.style.transform = 'rotate(0deg)';
-        }
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     });
   }
@@ -79,13 +89,13 @@
       return;
     }
     toast.textContent = msg;
-    toast.style.background = isError ? '#EF4444' : '#22C55E';
+    toast.classList.toggle('is-error', !!isError);
     toast.classList.add('show');
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toast.classList.remove('show');
       toastTimer = null;
-    }, 4000);
+    }, 5000);
   }
 
   // ─── Form submission ─────────────────────────────────────────────
@@ -93,25 +103,54 @@
     const form = document.getElementById('order-form');
     if (!form) return;
 
+    const REQUIRED = ['name', 'contact', 'business'];
+
+    function fieldOf(id) {
+      const input = document.getElementById(id);
+      return { input: input, wrap: input ? input.closest('.field') : null };
+    }
+
+    function clearError(id) {
+      const f = fieldOf(id);
+      if (f.wrap) f.wrap.classList.remove('has-error');
+      if (f.input) f.input.removeAttribute('aria-invalid');
+    }
+
+    function markError(id) {
+      const f = fieldOf(id);
+      if (f.wrap) f.wrap.classList.add('has-error');
+      if (f.input) f.input.setAttribute('aria-invalid', 'true');
+      return f.input;
+    }
+
+    REQUIRED.forEach((id) => {
+      const input = document.getElementById(id);
+      if (input) input.addEventListener('input', () => clearError(id));
+    });
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const name = (document.getElementById('name') || {}).value || '';
-      const contact = (document.getElementById('contact') || {}).value || '';
-      const business = (document.getElementById('business') || {}).value || '';
-      const tariff = (document.getElementById('tariff') || {}).value || '';
-      const message = (document.getElementById('message') || {}).value || '';
-
+      const read = (id) => ((document.getElementById(id) || {}).value || '').trim();
       const trimmed = {
-        name: name.trim(),
-        contact: contact.trim(),
-        business: business.trim(),
-        tariff: tariff,
-        message: message.trim(),
+        name: read('name'),
+        contact: read('contact'),
+        business: read('business'),
+        tariff: (document.getElementById('tariff') || {}).value || '',
+        message: read('message'),
       };
 
-      if (!trimmed.name || !trimmed.contact || !trimmed.business) {
-        showToast('Пожалуйста, заполните имя, контакт и тип бизнеса.', true);
+      let firstBad = null;
+      REQUIRED.forEach((id) => {
+        clearError(id);
+        if (!trimmed[id]) {
+          const input = markError(id);
+          if (!firstBad) firstBad = input;
+        }
+      });
+      if (firstBad) {
+        showToast('Заполните имя, контакт и тип бизнеса — без них мы не сможем ответить.', true);
+        firstBad.focus();
         return;
       }
 
@@ -120,8 +159,8 @@
       const spinner = document.getElementById('btn-spinner');
 
       if (submitBtn) submitBtn.disabled = true;
-      if (btnText) btnText.textContent = 'Отправляем...';
-      if (spinner) spinner.classList.remove('hidden');
+      if (btnText) btnText.textContent = 'Отправляем…';
+      if (spinner) spinner.style.display = '';
 
       const payload = Object.assign({}, trimmed, {
         source: window.location.href,
@@ -136,77 +175,65 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         });
-
         if (!res.ok) throw new Error('HTTP ' + res.status);
 
-        showToast('Заявка принята! Свяжемся с вами в течение 15 минут.');
+        showToast('Заявка принята. Ответим в течение 15 минут.');
         form.reset();
-        if (typeof window.ym === 'function') {
-          window.ym(METRIKA_ID, 'reachGoal', 'form_submit_success', {
-            tariff: trimmed.tariff || 'unspecified',
-            page: window.location.pathname,
-          });
-        }
+        goal('form_submit_success', {
+          tariff: trimmed.tariff || 'unspecified',
+          page: window.location.pathname,
+        });
       } catch (err) {
-        showToast('Не удалось отправить. Напишите на aiinformatorbot@gmail.com', true);
-        if (typeof window.ym === 'function') {
-          window.ym(METRIKA_ID, 'reachGoal', 'form_submit_error');
-        }
+        showToast('Не удалось отправить заявку. Напишите на aiinformatorbot@gmail.com — ответим так же быстро.', true);
+        goal('form_submit_error');
       } finally {
         if (submitBtn) submitBtn.disabled = false;
         if (btnText) btnText.textContent = 'Отправить заявку';
-        if (spinner) spinner.classList.add('hidden');
+        if (spinner) spinner.style.display = 'none';
       }
     });
   }
 
   // ─── Metrika goals ───────────────────────────────────────────────
   function initMetrikaGoals() {
-    document.querySelectorAll('a[href*="#cta"], a[data-goal="cta"]').forEach((el) => {
-      el.addEventListener('click', () => {
-        if (typeof window.ym === 'function') {
-          window.ym(METRIKA_ID, 'reachGoal', 'cta_click');
-        }
-      });
+    document.querySelectorAll('a[href*="#cta"], a[href*="#zakaz"], a[data-goal="cta"]').forEach((el) => {
+      el.addEventListener('click', () => goal('cta_click'));
     });
 
     document.querySelectorAll('a[href^="mailto:"]').forEach((el) => {
-      el.addEventListener('click', () => {
-        if (typeof window.ym === 'function') {
-          window.ym(METRIKA_ID, 'reachGoal', 'email_click');
-        }
-      });
+      el.addEventListener('click', () => goal('email_click'));
     });
 
-    // Track blog reads (when reaching 50% of an article)
     if (document.body.classList.contains('article-page')) {
       let fired = false;
       window.addEventListener('scroll', () => {
         if (fired) return;
         const percent =
-          (window.scrollY + window.innerHeight) /
-          document.documentElement.scrollHeight;
+          (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
         if (percent > 0.5) {
           fired = true;
-          if (typeof window.ym === 'function') {
-            window.ym(METRIKA_ID, 'reachGoal', 'blog_read', {
-              slug: window.location.pathname,
-            });
-          }
+          goal('blog_read', { slug: window.location.pathname });
         }
       }, { passive: true });
     }
   }
 
-  // ─── Pre-select tariff from URL (?tariff=basic|optimal|premium|premium-plus)
+  // ─── Выбор тарифа: из ссылки на карточке и из ?tariff= ───────────
   function initTariffPrefill() {
     const select = document.getElementById('tariff');
     if (!select) return;
-    const params = new URLSearchParams(window.location.search);
-    const t = params.get('tariff');
-    if (!t) return;
-    const opt = Array.from(select.options).find((o) => o.value === t);
-    if (opt) select.value = t;
+
+    function apply(value) {
+      if (!value) return;
+      const opt = Array.from(select.options).find((o) => o.value === value);
+      if (opt) select.value = value;
+    }
+
+    apply(new URLSearchParams(window.location.search).get('tariff'));
+
+    document.querySelectorAll('[data-tariff]').forEach((el) => {
+      el.addEventListener('click', () => apply(el.getAttribute('data-tariff')));
+    });
   }
 
   // ─── Init on DOM ready ───────────────────────────────────────────

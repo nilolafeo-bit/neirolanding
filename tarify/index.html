@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#0A0B10" />
-  <meta name="msapplication-TileColor" content="#0A0B10" />
+  <meta name="theme-color" content="#0A0A0C" />
+  <meta name="msapplication-TileColor" content="#0A0A0C" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NeiroLanding" />
@@ -47,23 +47,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;600;650;700;800&family=Golos+Text:wght@400;500;600&family=Martian+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            display: ['Unbounded', 'sans-serif'],
-            body: ['Mulish', 'sans-serif'],
+            display: ['Geologica', 'sans-serif'],
+            body: ['Golos Text', 'sans-serif'],
           },
           colors: {
-            bg: '#0A0B10',
-            surface: '#12141C',
-            card: '#181B26',
-            border: '#242836',
-            green: { 400: '#4ADE80', 500: '#22C55E', 600: '#16A34A' },
-            accent: '#818CF8',
+            bg: '#0A0A0C',
+            surface: '#121216',
+            card: '#1A1A21',
+            border: '#26262E',
+            green: { 400: '#FF2D78', 500: '#FF2D78', 600: '#D1005B' },
+            accent: '#FF2D78',
           },
           animation: {
             'float': 'float 6s ease-in-out infinite',
@@ -137,7 +137,7 @@
             "price": "4990",
             "priceCurrency": "RUB",
             "availability": "https://schema.org/InStock",
-            "description": "Всё из «Базового» + свой домен .ru/.com на год, базовое SEO (мета, OG, schema), Яндекс.Метрика с целями, ускоренная загрузка (PageSpeed 90+), кнопки WhatsApp/Telegram. Срок: 1 день."
+            "description": "Всё из «Базового» + свой домен .ru/.com на год, базовое SEO (мета, OG, schema), Яндекс.Метрика с целями, оптимизация загрузки, кнопки WhatsApp/Telegram. Срок: 1 день."
           },
           {
             "@type": "Offer",
@@ -186,6 +186,7 @@
   ]
 }
 </script>
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body class="">
 
@@ -193,37 +194,36 @@
 <nav class="nl-nav">
   <div class="nl-nav-inner">
     <a href="/" class="nl-logo">
-      <span class="nl-logo-mark">NL</span>
+      <span class="nl-logo-mark" aria-hidden="true"></span>
       <span>NeiroLanding</span>
     </a>
     <div class="nl-nav-links">
-        <a href="/uslugi/" class="">Услуги</a>
-        <a href="/tarify/" class="active">Тарифы</a>
-        <a href="/portfolio/" class="">Портфолио</a>
-        <a href="/blog/" class="">Блог</a>
-        <a href="/o-nas/" class="">О нас</a>
-        <a href="/faq/" class="">FAQ</a>
-        <a href="/generator.html" class="">Генератор</a>
-    </div>
-    <a href="/kontakty/" class="nl-nav-cta btn-primary font-display font-semibold text-white" style="padding:10px 20px; border-radius:12px; font-size:14px;">
-      Заказать сайт →
-    </a>
-    <button id="menu-toggle" class="nl-burger" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div id="mobile-menu" class="nl-mobile">
       <a href="/uslugi/">Услуги</a>
-      <a href="/tarify/">Тарифы</a>
+      <a href="/tarify/" aria-current="page">Тарифы</a>
       <a href="/portfolio/">Портфолио</a>
       <a href="/blog/">Блог</a>
       <a href="/o-nas/">О нас</a>
       <a href="/faq/">FAQ</a>
       <a href="/generator.html">Генератор</a>
-    <a href="/kontakty/" class="btn-primary nl-mobile-cta font-display font-semibold">Заказать сайт →</a>
+    </div>
+    <a href="/kontakty/" class="nl-nav-cta btn-primary" data-goal="cta"><span>Заказать сайт</span></a>
+    <button id="menu-toggle" class="nl-burger" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="nl-mobile">
+    <div class="nl-mobile-list">
+      <a href="/uslugi/">Услуги</a>
+      <a href="/tarify/" aria-current="page">Тарифы</a>
+      <a href="/portfolio/">Портфолио</a>
+      <a href="/blog/">Блог</a>
+      <a href="/o-nas/">О нас</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/generator.html">Генератор</a>
+      <a href="/kontakty/" class="btn-primary nl-mobile-cta" data-goal="cta"><span>Заказать сайт</span></a>
+    </div>
   </div>
 </nav>
-
 
 <nav class="nl-breadcrumbs container" aria-label="Хлебные крошки">
   <ol>
@@ -258,38 +258,38 @@
           <p style="color:#6B7280; font-size: 12px; margin-top: 4px;">разовый платёж · 1 день</p>
         </div>
         <ul style="flex: 1; color: #9CA3AF; font-size: 14px; line-height: 1.5; list-style: none; padding: 0; margin: 0 0 24px;">
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> 5–7 секций лендинга</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> Адаптивный дизайн</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> Форма заявки в Telegram/email</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> Бесплатный хостинг навсегда</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> 3 бесплатных правки</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> 5–7 секций лендинга</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Адаптивный дизайн</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Форма заявки в Telegram/email</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Бесплатный хостинг навсегда</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> 3 бесплатных правки</li>
           <li style="margin-bottom: 10px; color:#6B7280;"><span style="color:#6B7280;">✗</span> Свой домен .ru / .com</li>
           <li style="margin-bottom: 10px; color:#6B7280;"><span style="color:#6B7280;">✗</span> SEO и Метрика</li>
         </ul>
-        <a href="/kontakty/?tariff=basic" class="btn-ghost font-display font-semibold text-center" style="display: block; padding: 14px; border-radius: 12px; font-size: 14px; color: #4ADE80; border-color: rgba(74,222,128,0.3);">
+        <a href="/kontakty/?tariff=basic" class="btn-ghost font-display font-semibold text-center" style="display: block; padding: 14px; border-radius: 12px; font-size: 14px; color: #FF2D78; border-color: rgba(74,222,128,0.3);">
           Выбрать базовый
         </a>
       </article>
 
       
       <article class="pricing-card pricing-popular reveal" style="position: relative; transition-delay: 0.1s;">
-        <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: #22C55E; color: #0A0B10; font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 700; padding: 6px 16px; border-radius: 9999px; white-space: nowrap;">
+        <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: #D1005B; color: #0A0A0C; font-family: 'Geologica', sans-serif; font-size: 11px; font-weight: 700; padding: 6px 16px; border-radius: 9999px; white-space: nowrap;">
           ⚡ Чаще всего выбирают
         </div>
         <div style="margin: 8px 0 24px;">
-          <p style="color:#4ADE80; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Улучшенный лендинг</p>
+          <p style="color:#FF2D78; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Улучшенный лендинг</p>
           <div style="display:flex; align-items:flex-end; gap: 4px;">
             <span class="font-display font-black text-white" style="font-size: 32px; white-space: nowrap;">4 990&nbsp;₽</span>
           </div>
           <p style="color:#6B7280; font-size: 12px; margin-top: 4px;">разовый платёж · 1 день</p>
         </div>
         <ul style="flex: 1; color: #D1D5DB; font-size: 14px; line-height: 1.5; list-style: none; padding: 0; margin: 0 0 24px;">
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> Всё из «Базового»</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> Свой домен .ru / .com на год</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> Базовое SEO (мета, OG, schema)</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> Яндекс.Метрика + цели</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> Ускоренная загрузка (PageSpeed 90+)</li>
-          <li style="margin-bottom: 10px;"><span style="color:#4ADE80;">✓</span> WhatsApp / Telegram кнопки</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Всё из «Базового»</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Свой домен .ru / .com на год</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Базовое SEO (мета, OG, schema)</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Яндекс.Метрика + цели</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Оптимизация загрузки</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> WhatsApp / Telegram кнопки</li>
         </ul>
         <a href="/kontakty/?tariff=optimal" class="btn-primary font-display font-bold text-white text-center glow-green-sm" style="display: block; padding: 14px; border-radius: 12px; font-size: 14px;">
           Выбрать улучшенный 🚀
@@ -299,48 +299,48 @@
       
       <article class="pricing-card reveal" style="transition-delay: 0.15s;">
         <div style="margin-bottom: 24px;">
-          <p style="color:#818CF8; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Многостраничный сайт</p>
+          <p style="color:#FF2D78; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Многостраничный сайт</p>
           <div style="display:flex; align-items:flex-end; gap: 4px;">
             <span class="font-display font-black text-white" style="font-size: 32px; white-space: nowrap;">7 990&nbsp;₽</span>
           </div>
           <p style="color:#6B7280; font-size: 12px; margin-top: 4px;">разовый платёж · 2 дня</p>
         </div>
         <ul style="flex: 1; color: #9CA3AF; font-size: 14px; line-height: 1.5; list-style: none; padding: 0; margin: 0 0 24px;">
-          <li style="margin-bottom: 10px;"><span style="color:#818CF8;">✓</span> До 5 связанных страниц</li>
-          <li style="margin-bottom: 10px;"><span style="color:#818CF8;">✓</span> Адаптивный дизайн</li>
-          <li style="margin-bottom: 10px;"><span style="color:#818CF8;">✓</span> Форма заявки на каждой странице</li>
-          <li style="margin-bottom: 10px;"><span style="color:#818CF8;">✓</span> Бесплатный хостинг навсегда</li>
-          <li style="margin-bottom: 10px;"><span style="color:#818CF8;">✓</span> 5 бесплатных правок</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> До 5 связанных страниц</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Адаптивный дизайн</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Форма заявки на каждой странице</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Бесплатный хостинг навсегда</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> 5 бесплатных правок</li>
           <li style="margin-bottom: 10px; color:#6B7280;"><span style="color:#6B7280;">✗</span> Продвинутое SEO и блог</li>
           <li style="margin-bottom: 10px; color:#6B7280;"><span style="color:#6B7280;">✗</span> Расширенная Метрика</li>
         </ul>
-        <a href="/kontakty/?tariff=premium" class="btn-ghost font-display font-semibold text-center" style="display: block; padding: 14px; border-radius: 12px; font-size: 14px; color: #818CF8; border-color: rgba(129,140,248,0.3);">
+        <a href="/kontakty/?tariff=premium" class="btn-ghost font-display font-semibold text-center" style="display: block; padding: 14px; border-radius: 12px; font-size: 14px; color: #FF2D78; border-color: rgba(129,140,248,0.3);">
           Выбрать сайт
         </a>
       </article>
 
       
       <article class="pricing-card pricing-premium-plus reveal" style="position: relative; transition-delay: 0.2s; border-color: rgba(245, 158, 11, 0.4);">
-        <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #F59E0B, #818CF8); color: #0A0B10; font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 700; padding: 6px 16px; border-radius: 9999px; white-space: nowrap;">
+        <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #FF2D78, #FF2D78); color: #0A0A0C; font-family: 'Geologica', sans-serif; font-size: 11px; font-weight: 700; padding: 6px 16px; border-radius: 9999px; white-space: nowrap;">
           ✦ Максимум для SEO
         </div>
         <div style="margin: 8px 0 24px;">
-          <p style="color:#F59E0B; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Сайт + SEO и блог</p>
+          <p style="color:#FF2D78; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Сайт + SEO и блог</p>
           <div style="display:flex; align-items:flex-end; gap: 4px;">
             <span class="font-display font-black text-white" style="font-size: 32px; white-space: nowrap;">11 990&nbsp;₽</span>
           </div>
           <p style="color:#6B7280; font-size: 12px; margin-top: 4px;">разовый платёж · 2 дня</p>
         </div>
         <ul style="flex: 1; color: #D1D5DB; font-size: 14px; line-height: 1.5; list-style: none; padding: 0; margin: 0 0 24px;">
-          <li style="margin-bottom: 10px;"><span style="color:#F59E0B;">✓</span> Всё из «Многостраничного сайта»</li>
-          <li style="margin-bottom: 10px;"><span style="color:#F59E0B;">✓</span> Свой домен .ru / .com на год</li>
-          <li style="margin-bottom: 10px;"><span style="color:#F59E0B;">✓</span> Продвинутое SEO + JSON-LD schema</li>
-          <li style="margin-bottom: 10px;"><span style="color:#F59E0B;">✓</span> Раздел блога (3 готовые статьи)</li>
-          <li style="margin-bottom: 10px;"><span style="color:#F59E0B;">✓</span> Яндекс.Метрика + 5 настроенных целей</li>
-          <li style="margin-bottom: 10px;"><span style="color:#F59E0B;">✓</span> 8 бесплатных правок</li>
-          <li style="margin-bottom: 10px;"><span style="color:#F59E0B;">✓</span> 1 месяц поддержки</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Всё из «Многостраничного сайта»</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Свой домен .ru / .com на год</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Продвинутое SEO + JSON-LD schema</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Раздел блога (3 готовые статьи)</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> Яндекс.Метрика + 5 настроенных целей</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> 8 бесплатных правок</li>
+          <li style="margin-bottom: 10px;"><span style="color:#FF2D78;">✓</span> 1 месяц поддержки</li>
         </ul>
-        <a href="/kontakty/?tariff=premium-plus" class="btn-ghost font-display font-semibold text-center" style="display: block; padding: 14px; border-radius: 12px; font-size: 14px; color: #F59E0B; border-color: rgba(245,158,11,0.3);">
+        <a href="/kontakty/?tariff=premium-plus" class="btn-ghost font-display font-semibold text-center" style="display: block; padding: 14px; border-radius: 12px; font-size: 14px; color: #FF2D78; border-color: rgba(245,158,11,0.3);">
           Выбрать с SEO
         </a>
       </article>
@@ -390,7 +390,7 @@
 <section class="section">
   <div class="container-narrow">
     <div class="prose-callout">
-      <h3 style="margin: 0 0 12px; font-family: 'Unbounded', sans-serif; color: white; font-size: 18px;">
+      <h3 style="margin: 0 0 12px; font-family: 'Geologica', sans-serif; color: white; font-size: 18px;">
         Что НЕ входит в любой тариф
       </h3>
       <ul style="color:#D1D5DB; line-height: 1.7;">
@@ -463,53 +463,52 @@
   <div class="nl-footer-inner">
     <div class="nl-footer-grid">
       <div>
-        <a href="/" class="nl-logo" style="margin-bottom:12px;">
-          <span class="nl-logo-mark">NL</span>
+        <a href="/" class="nl-logo">
+          <span class="nl-logo-mark" aria-hidden="true"></span>
           <span>NeiroLanding</span>
         </a>
-        <p style="color:#9CA3AF; font-size:14px; line-height:1.6; max-width:340px; margin-top:8px;">
+        <p class="lede" style="margin-top:var(--s4); font-size:15px; max-width:36ch">
           Лендинги и сайты под ключ для малого бизнеса России.
-          От 2 990 ₽, готово за 1 день, бесплатный хостинг навсегда.
+          От 2 990 ₽, готово за 1 день, хостинг бесплатно навсегда.
         </p>
-        <p style="color:#6B7280; font-size:13px; margin-top:12px;">
-          📧 <a href="mailto:aiinformatorbot@gmail.com">aiinformatorbot@gmail.com</a>
-        </p>
-      </div>
-      <div>
-        <h4>Услуги</h4>
-        <ul>
-          <li><a href="/uslugi/landing/">Лендинги</a></li>
-          <li><a href="/uslugi/sayt/">Многостраничные сайты</a></li>
-          <li><a href="/tarify/">Тарифы</a></li>
-          <li><a href="/portfolio/">Портфолио</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Полезное</h4>
-        <ul>
-          <li><a href="/blog/">Блог</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/generator.html">Генератор лендинга</a></li>
-          <li><a href="/o-nas/">О нас</a></li>
-          <li><a href="/kontakty/">Контакты</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Запустить сайт</h4>
-        <ul>
-          <li><a href="/kontakty/">Оставить заявку</a></li>
-          <li><a href="mailto:aiinformatorbot@gmail.com">Написать на e-mail</a></li>
-        </ul>
-        <a href="/kontakty/" class="btn-primary font-display font-semibold text-white" style="display:inline-block; margin-top:14px; padding:10px 18px; border-radius:12px; font-size:13px;">
-          Заказать за 2 990 ₽ →
+        <a href="mailto:aiinformatorbot@gmail.com" class="link-arrow" style="margin-top:var(--s4); color:var(--text-2)">
+          <svg class="ic ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h18v14H3V5zM3 5l9 7 9-7"/></svg> aiinformatorbot@gmail.com
         </a>
       </div>
-    </div>
-    <div class="nl-footer-bottom">
-      <div>© 2026 NeiroLanding. Все права защищены.</div>
+
       <div>
-        Сделано на нейросетях · Хостинг GitHub Pages · Россия
+        <h4>Услуги</h4>
+        <nav>
+          <a href="/uslugi/landing/">Лендинги</a>
+          <a href="/uslugi/sayt/">Многостраничные сайты</a>
+          <a href="/tarify/">Тарифы</a>
+          <a href="/portfolio/">Портфолио</a>
+        </nav>
       </div>
+
+      <div>
+        <h4>Полезное</h4>
+        <nav>
+          <a href="/blog/">Блог</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/generator.html">Генератор лендинга</a>
+          <a href="/o-nas/">О нас</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4>Запуск</h4>
+        <nav>
+          <a href="/kontakty/">Контакты</a>
+          <a href="/kontakty/" data-goal="cta">Оставить заявку</a>
+          <a href="mailto:aiinformatorbot@gmail.com">Написать на почту</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="nl-footer-bottom">
+      <span>© 2026 NeiroLanding</span>
+      <span>Хостинг GitHub Pages · Россия</span>
     </div>
   </div>
 </footer>

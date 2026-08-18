@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#0A0B10" />
-  <meta name="msapplication-TileColor" content="#0A0B10" />
+  <meta name="theme-color" content="#0A0A0C" />
+  <meta name="msapplication-TileColor" content="#0A0A0C" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NeiroLanding" />
@@ -47,23 +47,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;600;650;700;800&family=Golos+Text:wght@400;500;600&family=Martian+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            display: ['Unbounded', 'sans-serif'],
-            body: ['Mulish', 'sans-serif'],
+            display: ['Geologica', 'sans-serif'],
+            body: ['Golos Text', 'sans-serif'],
           },
           colors: {
-            bg: '#0A0B10',
-            surface: '#12141C',
-            card: '#181B26',
-            border: '#242836',
-            green: { 400: '#4ADE80', 500: '#22C55E', 600: '#16A34A' },
-            accent: '#818CF8',
+            bg: '#0A0A0C',
+            surface: '#121216',
+            card: '#1A1A21',
+            border: '#26262E',
+            green: { 400: '#FF2D78', 500: '#FF2D78', 600: '#D1005B' },
+            accent: '#FF2D78',
           },
           animation: {
             'float': 'float 6s ease-in-out infinite',
@@ -112,6 +112,7 @@
   ]
 }
 </script>
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body class="">
 
@@ -119,26 +120,10 @@
 <nav class="nl-nav">
   <div class="nl-nav-inner">
     <a href="/" class="nl-logo">
-      <span class="nl-logo-mark">NL</span>
+      <span class="nl-logo-mark" aria-hidden="true"></span>
       <span>NeiroLanding</span>
     </a>
     <div class="nl-nav-links">
-        <a href="/uslugi/" class="">Услуги</a>
-        <a href="/tarify/" class="">Тарифы</a>
-        <a href="/portfolio/" class="">Портфолио</a>
-        <a href="/blog/" class="">Блог</a>
-        <a href="/o-nas/" class="">О нас</a>
-        <a href="/faq/" class="">FAQ</a>
-        <a href="/generator.html" class="">Генератор</a>
-    </div>
-    <a href="/kontakty/" class="nl-nav-cta btn-primary font-display font-semibold text-white" style="padding:10px 20px; border-radius:12px; font-size:14px;">
-      Заказать сайт →
-    </a>
-    <button id="menu-toggle" class="nl-burger" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div id="mobile-menu" class="nl-mobile">
       <a href="/uslugi/">Услуги</a>
       <a href="/tarify/">Тарифы</a>
       <a href="/portfolio/">Портфолио</a>
@@ -146,10 +131,25 @@
       <a href="/o-nas/">О нас</a>
       <a href="/faq/">FAQ</a>
       <a href="/generator.html">Генератор</a>
-    <a href="/kontakty/" class="btn-primary nl-mobile-cta font-display font-semibold">Заказать сайт →</a>
+    </div>
+    <a href="/kontakty/" class="nl-nav-cta btn-primary" data-goal="cta"><span>Заказать сайт</span></a>
+    <button id="menu-toggle" class="nl-burger" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="nl-mobile">
+    <div class="nl-mobile-list">
+      <a href="/uslugi/">Услуги</a>
+      <a href="/tarify/">Тарифы</a>
+      <a href="/portfolio/">Портфолио</a>
+      <a href="/blog/">Блог</a>
+      <a href="/o-nas/">О нас</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/generator.html">Генератор</a>
+      <a href="/kontakty/" class="btn-primary nl-mobile-cta" data-goal="cta"><span>Заказать сайт</span></a>
+    </div>
   </div>
 </nav>
-
 
 <nav class="nl-breadcrumbs container" aria-label="Хлебные крошки">
   <ol>
@@ -260,53 +260,52 @@
   <div class="nl-footer-inner">
     <div class="nl-footer-grid">
       <div>
-        <a href="/" class="nl-logo" style="margin-bottom:12px;">
-          <span class="nl-logo-mark">NL</span>
+        <a href="/" class="nl-logo">
+          <span class="nl-logo-mark" aria-hidden="true"></span>
           <span>NeiroLanding</span>
         </a>
-        <p style="color:#9CA3AF; font-size:14px; line-height:1.6; max-width:340px; margin-top:8px;">
+        <p class="lede" style="margin-top:var(--s4); font-size:15px; max-width:36ch">
           Лендинги и сайты под ключ для малого бизнеса России.
-          От 2 990 ₽, готово за 1 день, бесплатный хостинг навсегда.
+          От 2 990 ₽, готово за 1 день, хостинг бесплатно навсегда.
         </p>
-        <p style="color:#6B7280; font-size:13px; margin-top:12px;">
-          📧 <a href="mailto:aiinformatorbot@gmail.com">aiinformatorbot@gmail.com</a>
-        </p>
-      </div>
-      <div>
-        <h4>Услуги</h4>
-        <ul>
-          <li><a href="/uslugi/landing/">Лендинги</a></li>
-          <li><a href="/uslugi/sayt/">Многостраничные сайты</a></li>
-          <li><a href="/tarify/">Тарифы</a></li>
-          <li><a href="/portfolio/">Портфолио</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Полезное</h4>
-        <ul>
-          <li><a href="/blog/">Блог</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/generator.html">Генератор лендинга</a></li>
-          <li><a href="/o-nas/">О нас</a></li>
-          <li><a href="/kontakty/">Контакты</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Запустить сайт</h4>
-        <ul>
-          <li><a href="/kontakty/">Оставить заявку</a></li>
-          <li><a href="mailto:aiinformatorbot@gmail.com">Написать на e-mail</a></li>
-        </ul>
-        <a href="/kontakty/" class="btn-primary font-display font-semibold text-white" style="display:inline-block; margin-top:14px; padding:10px 18px; border-radius:12px; font-size:13px;">
-          Заказать за 2 990 ₽ →
+        <a href="mailto:aiinformatorbot@gmail.com" class="link-arrow" style="margin-top:var(--s4); color:var(--text-2)">
+          <svg class="ic ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h18v14H3V5zM3 5l9 7 9-7"/></svg> aiinformatorbot@gmail.com
         </a>
       </div>
-    </div>
-    <div class="nl-footer-bottom">
-      <div>© 2026 NeiroLanding. Все права защищены.</div>
+
       <div>
-        Сделано на нейросетях · Хостинг GitHub Pages · Россия
+        <h4>Услуги</h4>
+        <nav>
+          <a href="/uslugi/landing/">Лендинги</a>
+          <a href="/uslugi/sayt/">Многостраничные сайты</a>
+          <a href="/tarify/">Тарифы</a>
+          <a href="/portfolio/">Портфолио</a>
+        </nav>
       </div>
+
+      <div>
+        <h4>Полезное</h4>
+        <nav>
+          <a href="/blog/">Блог</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/generator.html">Генератор лендинга</a>
+          <a href="/o-nas/">О нас</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4>Запуск</h4>
+        <nav>
+          <a href="/kontakty/">Контакты</a>
+          <a href="/kontakty/" data-goal="cta">Оставить заявку</a>
+          <a href="mailto:aiinformatorbot@gmail.com">Написать на почту</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="nl-footer-bottom">
+      <span>© 2026 NeiroLanding</span>
+      <span>Хостинг GitHub Pages · Россия</span>
     </div>
   </div>
 </footer>

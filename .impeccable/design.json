@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-18T00:00:00Z",
+  "title": "Design System: NeiroLanding — «Образец печати»",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Печатная краска, пурпур",
+        "canonical": "#FF2D78",
+        "tonalRamp": ["#2B0013", "#4D0024", "#7A0039", "#A8004E", "#D1005B", "#FF2D78", "#FF6D9F", "#FFC2D6"]
+      },
+      "ink-deep": {
+        "role": "primary",
+        "displayName": "Краска в оттиске",
+        "canonical": "#D1005B",
+        "tonalRamp": ["#24000F", "#40001B", "#630029", "#8C003C", "#D1005B", "#F03E82", "#FA8CB4", "#FFD0E0"]
+      },
+      "stock": {
+        "role": "neutral",
+        "displayName": "Печатная бумага, чёрная",
+        "canonical": "#0A0A0C",
+        "tonalRamp": ["#0A0A0C", "#121216", "#1A1A21", "#26262E", "#3A3A44", "#5A5A64", "#8A8A93", "#C6C6CC"]
+      },
+      "stock-2": { "role": "neutral", "displayName": "Бумага, второй слой", "canonical": "#121216" },
+      "stock-3": { "role": "neutral", "displayName": "Бумага, третий слой", "canonical": "#1A1A21" },
+      "proof": {
+        "role": "neutral",
+        "displayName": "Бумажная вклейка",
+        "canonical": "#F3F0EA",
+        "tonalRamp": ["#1A1913", "#2E2C24", "#4A4739", "#6B6759", "#928D7D", "#BDB8A9", "#E7E2D8", "#F3F0EA"]
+      },
+      "proof-ink": { "role": "neutral", "displayName": "Краска на вклейке", "canonical": "#131310" },
+      "proof-ink-2": { "role": "neutral", "displayName": "Полутон на вклейке", "canonical": "#55524A" },
+      "proof-rule": { "role": "neutral", "displayName": "Линейка на вклейке", "canonical": "rgba(19,19,16,0.16)" },
+      "ink-wash": { "role": "primary", "displayName": "Разбавленная краска", "canonical": "rgba(255,45,120,0.12)" },
+      "text": { "role": "neutral", "displayName": "Основной текст", "canonical": "#F3F0EA" },
+      "text-2": { "role": "neutral", "displayName": "Вторичный текст", "canonical": "#A9A69E" },
+      "text-3": { "role": "neutral", "displayName": "Служебный текст", "canonical": "#7C7972" },
+      "rule": { "role": "neutral", "displayName": "Волосяная линейка", "canonical": "rgba(243,240,234,0.13)" },
+      "rule-2": { "role": "neutral", "displayName": "Усиленная линейка", "canonical": "rgba(243,240,234,0.26)" }
+    },
+    "typographyMeta": {
+      "press": { "displayName": "Пресс", "purpose": "Заголовок первого разворота: одна фраза в трёх ступенях веса (300 / 800 / 800 краской). Больше нигде." },
+      "display": { "displayName": "Заголовок разворота", "purpose": "h2 раздела, максимум 20ch; крупная ступень — финальный призыв." },
+      "title": { "displayName": "Заголовок блока", "purpose": "Шаги маршрута, тарифы, карточки статей, вопросы FAQ." },
+      "body": { "displayName": "Текст", "purpose": "Основной набор, ширина строки 68ch (--measure)." },
+      "body-small": { "displayName": "Мелкий текст", "purpose": "Списки, карточки, подвал." },
+      "spec": { "displayName": "Спецификация", "purpose": "Только служебные данные: шифры, сроки, подписи полей, заголовки колонок. Всегда uppercase, никогда не предложение." }
+    },
+    "shadows": [
+      { "name": "ink-edge", "value": "0 1px 0 0 var(--ink-deep)", "purpose": "Волосяная нижняя кромка основной кнопки и поля в фокусе — след нажима." },
+      { "name": "sheet-under", "value": "0 22px 48px -30px rgba(0,0,0,0.9)", "purpose": "Подложенный лист: карточка-ссылка и уведомление при наведении/появлении." },
+      { "name": "sample-under", "value": "inset 0 0 0 1px rgba(243,240,234,0.07), 0 30px 60px -30px rgba(0,0,0,0.95)", "purpose": "Образец в веере." },
+      { "name": "sheet-trim", "value": "inset 0 15px 26px -15px rgba(0,0,0,0.55), inset 0 -15px 26px -15px rgba(0,0,0,0.55)", "purpose": "Верхний и нижний обрез светлой вклейки поверх чёрной бумаги." },
+      { "name": "tariff-featured", "value": "0 26px 60px -34px rgba(19,19,16,0.75)", "purpose": "Единственный подъём внутри вклейки — выделенный тариф." }
+    ],
+    "motion": [
+      { "name": "press", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Единственная кривая ускорения на весь сайт: оттиск ложится и замирает. Длительности 0.25s–0.85s." },
+      { "name": "reveal", "value": "opacity 0.75s var(--press), transform 0.85s var(--press)", "purpose": "Появление блока при прокрутке (translateY 18px → 0), задержки 70/140/210/280ms по data-delay." },
+      { "name": "reduced-motion", "value": "animation-duration: 0.01ms; transition-duration: 0.01ms", "purpose": "Глобальное гашение при prefers-reduced-motion: reduce." }
+    ],
+    "breakpoints": [
+      { "name": "form-row", "value": "560px" },
+      { "name": "tariffs-2", "value": "640px" },
+      { "name": "table-flat", "value": "700px" },
+      { "name": "footer-2", "value": "720px" },
+      { "name": "route-3col", "value": "760px" },
+      { "name": "spread", "value": "900px" },
+      { "name": "order", "value": "980px" },
+      { "name": "press-2col", "value": "1000px" },
+      { "name": "blog-3", "value": "1040px" },
+      { "name": "nav-desktop", "value": "1080px" },
+      { "name": "tariffs-4", "value": "1120px" },
+      { "name": "rail-wide", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Основная кнопка",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Главное действие разворота: заливка краской, при наведении снизу вверх накатывается светлая бумага.",
+      "html": "<a href=\"#zakaz\" class=\"ds-btn-primary\"><span>Заказать сайт</span></a>",
+      "css": ".ds-btn-primary { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 13px 26px; border: 1px solid transparent; border-radius: 2px; background: var(--ink, #FF2D78); color: #fff; font-family: 'Geologica', system-ui, sans-serif; font-weight: 600; font-size: 15px; letter-spacing: -0.015em; text-decoration: none; cursor: pointer; overflow: hidden; box-shadow: 0 1px 0 0 var(--ink-deep, #D1005B), 0 10px 22px -16px rgba(255,45,120,0.55); transition: color 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary::before { content: ''; position: absolute; inset: 0; background: var(--proof, #F3F0EA); transform: translateY(101%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary > * { position: relative; z-index: 1; } .ds-btn-primary:hover { color: #131310; box-shadow: 0 1px 0 0 var(--ink, #FF2D78), 0 12px 26px -18px rgba(243,240,234,0.3); } .ds-btn-primary:hover::before { transform: translateY(0); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--ink, #FF2D78); outline-offset: 3px; }"
+    },
+    {
+      "name": "Призрачная кнопка",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Второстепенное действие: только рамка в одну волосяную линию.",
+      "html": "<a href=\"#pricing\" class=\"ds-btn-ghost\"><span>Смотреть цены</span></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 13px 26px; border: 1px solid rgba(243,240,234,0.26); border-radius: 2px; background: transparent; color: #F3F0EA; font-family: 'Geologica', system-ui, sans-serif; font-weight: 600; font-size: 15px; letter-spacing: -0.015em; text-decoration: none; cursor: pointer; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1), background 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { border-color: #F3F0EA; background: rgba(243,240,234,0.05); } .ds-btn-ghost:active { transform: translateY(1px); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--ink, #FF2D78); outline-offset: 3px; }"
+    },
+    {
+      "name": "Каталожный шифр (колонцифра)",
+      "kind": "custom",
+      "refersTo": "folio",
+      "description": "Пометка на поле разворота: штрих краской и два служебных слова моношрифтом. Не надзаголовок — в поток над заголовком не ставится.",
+      "html": "<p class=\"ds-folio\"><span>NL-03</span><span>Порядок работ</span></p>",
+      "css": ".ds-folio { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin: 0; font-family: 'Martian Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.5; color: #7C7972; } .ds-folio::before { content: ''; width: 40px; height: 1px; background: var(--ink, #FF2D78); flex: none; }"
+    },
+    {
+      "name": "Поле бланка заказа",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Поле без корпуса: подпись моношрифтом и одна нижняя линейка, которая в фокусе становится краской.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Ваше имя</span><input class=\"ds-input\" type=\"text\" placeholder=\"Как к вам обращаться\" /></label>",
+      "css": ".ds-field { display: block; margin-bottom: 24px; } .ds-field-label { display: block; margin-bottom: 9px; font-family: 'Martian Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: #55524A; } .ds-input { width: 100%; padding: 13px 0; min-height: 48px; background: transparent; color: #131310; border: 0; border-bottom: 1px solid rgba(19,19,16,0.16); border-radius: 0; font-family: 'Golos Text', system-ui, sans-serif; font-size: 17px; line-height: 1.4; transition: border-color 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-input::placeholder { color: #8A877E; } .ds-input:focus { outline: none; border-bottom-color: var(--ink, #FF2D78); box-shadow: 0 1px 0 0 var(--ink, #FF2D78); } .ds-input[aria-invalid=\"true\"] { border-bottom-color: var(--ink-deep, #D1005B); box-shadow: 0 1px 0 0 var(--ink-deep, #D1005B); }"
+    },
+    {
+      "name": "Навигация",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Липкая шапка на размытой чёрной бумаге: знак-приводочная метка и пункты с подчёркиванием, которое раскатывается краской.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-logo\" href=\"/\"><span class=\"ds-logo-mark\"></span>NeiroLanding</a><nav class=\"ds-nav-links\"><a href=\"#uslugi\">Услуги</a><a href=\"#pricing\">Цены</a><a href=\"#faq\">Вопросы</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 32px; height: 78px; padding: 0 40px; background: rgba(10,10,12,0.9); backdrop-filter: blur(14px) saturate(1.4); border-bottom: 1px solid rgba(243,240,234,0.13); } .ds-logo { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-family: 'Geologica', system-ui, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -0.03em; color: #F3F0EA; } .ds-logo-mark { width: 26px; height: 26px; position: relative; border: 1px solid rgba(243,240,234,0.26); border-radius: 50%; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-logo-mark::before, .ds-logo-mark::after { content: ''; position: absolute; background: var(--ink, #FF2D78); } .ds-logo-mark::before { left: 50%; top: 3px; bottom: 3px; width: 1px; margin-left: -0.5px; } .ds-logo-mark::after { top: 50%; left: 3px; right: 3px; height: 1px; margin-top: -0.5px; } .ds-logo:hover .ds-logo-mark { transform: rotate(90deg); } .ds-nav-links { display: flex; margin-left: auto; gap: 24px; } .ds-nav-links a { position: relative; text-decoration: none; color: #A9A69E; font-family: 'Golos Text', system-ui, sans-serif; font-size: 14px; font-weight: 500; padding: 6px 0; transition: color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-nav-links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--ink, #FF2D78); transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-nav-links a:hover { color: #F3F0EA; } .ds-nav-links a:hover::after { transform: scaleX(1); }"
+    },
+    {
+      "name": "Оттиск (карточка)",
+      "kind": "card",
+      "refersTo": "card-proof",
+      "description": "Базовая поверхность второго слоя: волосяная рамка, угол 2px, тень подложенного листа только при наведении.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-card-spec\">NL-02 · Образцы</span><h3>Лендинг под ключ</h3><p>Структура, тексты, дизайн, публикация и форма заявки — за один день.</p></a>",
+      "css": ".ds-card { display: block; text-decoration: none; background: #121216; border: 1px solid rgba(243,240,234,0.13); border-radius: 2px; padding: 48px; color: #F3F0EA; transition: border-color 0.4s cubic-bezier(0.16,1,0.3,1), background 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-card h3 { margin: 12px 0 0; font-family: 'Geologica', system-ui, sans-serif; font-weight: 700; font-size: 25px; letter-spacing: -0.03em; line-height: 1.02; } .ds-card p { margin: 12px 0 0; font-family: 'Golos Text', system-ui, sans-serif; font-size: 15px; line-height: 1.55; color: #A9A69E; } .ds-card-spec { font-family: 'Martian Mono', ui-monospace, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: #7C7972; } .ds-card:hover { border-color: rgba(243,240,234,0.26); background: #1A1A21; box-shadow: 0 22px 48px -30px rgba(0,0,0,0.9); } .ds-card:focus-visible { outline: 2px solid var(--ink, #FF2D78); outline-offset: 3px; }"
+    },
+    {
+      "name": "Спецификация тиража",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Правое поле первого разворота: пары «параметр — значение» табличными цифрами, ключевое число краской.",
+      "html": "<div class=\"ds-spec\"><dl><div class=\"ds-spec-row\"><dt>Формат</dt><dd>Лендинг</dd></div><div class=\"ds-spec-row\"><dt>Срок</dt><dd><em>1 день</em></dd></div><div class=\"ds-spec-row\"><dt>Тираж от</dt><dd>2 990 ₽</dd></div></dl></div>",
+      "css": ".ds-spec { border-top: 1px solid rgba(243,240,234,0.26); padding-top: 16px; max-width: 300px; } .ds-spec dl { margin: 0; display: grid; } .ds-spec-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(243,240,234,0.13); } .ds-spec dt { font-family: 'Martian Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.13em; text-transform: uppercase; color: #7C7972; } .ds-spec dd { margin: 0; font-family: 'Geologica', system-ui, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.03em; color: #F3F0EA; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-spec dd em { font-style: normal; color: var(--ink, #FF2D78); }"
+    },
+    {
+      "name": "Тариф на вклейке",
+      "kind": "card",
+      "refersTo": "pricing-card",
+      "description": "Карточка прайса на светлой бумаге; выделенный тариф инвертируется в тёмную краску и получает единственный подъём внутри вклейки.",
+      "html": "<div class=\"ds-tariff ds-tariff--featured\"><span class=\"ds-flag\">Хит</span><h3>Улучшенный</h3><span class=\"ds-price\">5 990 ₽</span><ul class=\"ds-feats\"><li>До 7 экранов</li><li>Форма заявки и аналитика</li><li>Домен и хостинг</li></ul></div>",
+      "css": ".ds-tariff { position: relative; display: flex; flex-direction: column; background: transparent; border: 1px solid rgba(19,19,16,0.16); border-radius: 2px; padding: 32px 24px 24px; color: #131310; transition: background 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-tariff:hover { background: rgba(19,19,16,0.035); } .ds-tariff--featured { background: #131310; border-color: #131310; color: #F3F0EA; box-shadow: 0 26px 60px -34px rgba(19,19,16,0.75); } .ds-flag { position: absolute; top: -1px; right: -1px; padding: 6px 11px; background: var(--ink, #FF2D78); color: #fff; font-family: 'Martian Mono', ui-monospace, monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; } .ds-tariff h3 { margin: 0; font-family: 'Geologica', system-ui, sans-serif; font-size: 19px; font-weight: 650; letter-spacing: -0.028em; } .ds-price { display: block; margin: 16px 0 3px; font-family: 'Geologica', system-ui, sans-serif; font-size: 44px; font-weight: 800; letter-spacing: -0.05em; line-height: 1; font-variant-numeric: tabular-nums; } .ds-feats { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 11px; font-family: 'Golos Text', system-ui, sans-serif; font-size: 15px; line-height: 1.45; color: rgba(243,240,234,0.84); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Лист образцов типографии",
+    "overview": "Сайт напечатан, а не свёрстан. Вся система — это спусковой лист небольшой типографии: чёрная бумага #0A0A0C, вклеенные светлые листы #F3F0EA и ровно одна печатная краска — пурпур #FF2D78. Ничего третьего не подмешивается: нет второго акцента, нет градиентных заливок, нет свечения. Плотность высокая, но воздух распределён по одной ритмической шкале, поэтому разворот читается как набор, а не как лента блоков.\n\nИерархия держится не на плашках и не на тенях, а на трёх средствах: волосяная линейка (1px, 13% и 26% непрозрачности), контраст поверхности (чёрная бумага против бумажной вклейки) и краска, которой отмечено только самое важное. Служебные данные — шифры, единицы, сроки, подписи под образцами — набраны моноширинным Martian Mono капителью с разрядкой 0.13em; это единственная роль моношрифта, он никогда не идёт в текст.\n\nМир построен на осознанных отказах, и они зафиксированы в самой сборке: тёмный SaaS-герой с градиентом и свечением, сетка одинаковых карточек «иконка + заголовок + текст» с эмодзи, крупные скругления. Секция 17 таблицы стилей прямо нейтрализует наследие: .gradient-text и .text-glow теряют градиент и тень, .glow-green теряет box-shadow, .rounded-2xl/xl/lg принудительно сводятся к 2px.",
+    "keyCharacteristics": [
+      "Две поверхности (чёрный запечатанный лист и бумажная вклейка) и одна краска.",
+      "Углы 2px — практически квадратные; круг остаётся только у знака и у точек-индикаторов.",
+      "Волосяная линейка вместо рамок, плашек и разделительных теней.",
+      "Один шаг ускорения cubic-bezier(0.16, 1, 0.3, 1) и одна шкала отступов на весь сайт.",
+      "Моношрифт — только спецификация; текст — Golos Text; заголовки — Geologica.",
+      "Русскоязычный интерфейс; вёрстка без сборки, статика с корня репозитория."
+    ],
+    "rules": [
+      { "name": "Правило одной краски", "body": "На сайте одна печатная краска. Второй акцентный цвет не вводится ни для состояний, ни для категорий; различие несут вес, поверхность и линейка. Ошибка — это та же краска в оттиске (--ink-deep), а не красный.", "section": "colors" },
+      { "name": "Правило доли краски", "body": "Краска покрывает не более ~10% разворота и всегда обозначает одно: «сюда смотреть» или «это оттиск». Заливать краской крупные плоскости запрещено — исключение только заливка основной кнопки и флажок «Хит» на тарифе.", "section": "colors" },
+      { "name": "Правило двух бумаг", "body": "Поверхность бывает только двух видов: чёрный запечатанный лист или светлая вклейка (.sheet / .on-proof). Промежуточных серых фонов не существует; stock-2 и stock-3 — это не третья бумага, а разница нажима внутри чёрной.", "section": "colors" },
+      { "name": "Правило единого источника краски", "body": "Холст первого разворота и веер образцов читают цвета из CSS-переменных (getComputedStyle → --proof, --ink), а не хранят собственные значения. Меняя палитру, правьте только токены: компоненты обязаны следовать.", "section": "colors" },
+      { "name": "Правило моношрифта", "body": "Martian Mono — только данные и служебные пометки: шифр, срок, единица, подпись, заголовок колонки. Он никогда не набирает предложение и никогда не крупнее 11px.", "section": "typography" },
+      { "name": "Правило колонцифры", "body": "Каталожный шифр (.folio) — это пометка на поле листа, а не надзаголовок. На ширине от 900px он стоит в левом поле разворота (sticky, --rail 108/140px); на узком экране уходит абсолютом на верхний обрез разворота. Ставить его в поток над заголовком запрещено — именно этим он отличается от кикера.", "section": "typography" },
+      { "name": "Правило табличных цифр", "body": "Всё, что содержит числа — спецификация, цена, ведомость, метаданные образца — набирается font-variant-numeric: tabular-nums, чтобы цифры стояли в колонку.", "section": "typography" },
+      { "name": "Правило одной шкалы", "body": "Любой отступ — шаг шкалы --sN. Если нужного шага нет, берётся соседний, а не новое число.", "section": "layout" },
+      { "name": "Правило плоскости по умолчанию", "body": "В покое поверхность плоская. Тень появляется только как ответ на состояние (наведение, активный тариф, всплывшее уведомление) или как обрез вклейки.", "section": "elevation" },
+      { "name": "Правило мягкой тени", "body": "Тень всегда с нулевым или малым смещением по X, большим размытием и отрицательным разбросом. Жёсткие смещённые тени и любые свечения краской в системе запрещены.", "section": "elevation" },
+      { "name": "Правило волосяной линии", "body": "Разделяет линейка в 1px, а не отступ-плашка и не тень. Толще 1px линия в системе не бывает; «сильнее» — это rule-2, то есть плотнее, а не толще.", "section": "shapes" },
+      { "name": "Правило квадратного угла", "body": "Радиус в системе один: 2px. Любой класс с крупным скруглением из старой разметки принудительно сводится к нему.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do брать все цвета, отступы и кривую из токенов :root: шкала --s1..--s11, кривая --press cubic-bezier(0.16, 1, 0.3, 1), палитра из двух бумаг и одной краски.",
+      "Do использовать единственную кривую --press для всех переходов; длительность — от 0.25s (цвет) до 0.85s (появление), но кривая одна.",
+      "Do разделять содержимое волосяной линейкой в 1px и отступом из шкалы.",
+      "Do ставить каталожный шифр в поле разворота (.spread + .folio), а на узком экране — на верхний обрез, никогда в поток над заголовком.",
+      "Do набирать служебные данные Martian Mono 10–11px капителью с разрядкой 0.13em, а числа — табличными цифрами.",
+      "Do сохранять классы nl-*, btn-*, glass-card, pricing-card, badge-*, nl-label как публичный контракт: 21 другая страница до сих пор опирается на них и грузит Tailwind с CDN, тогда как index.html уже нет. Секция 17 таблицы стилей существует только ради того, чтобы старая разметка оставалась внутри нового мира.",
+      "Do держать сборку статической: правки идут прямо в index.html и assets/css/main.css, сборочного шага нет, публикация — GitHub Pages из корня репозитория.",
+      "Do читать цвета в JS через getComputedStyle(document.documentElement), если компоненту нужен цвет на канве.",
+      "Do уважать prefers-reduced-motion: анимации и переходы гасятся глобально, .reveal сразу видим.",
+      "Do оставлять компонент работоспособным без JS (веер вырождается в ленту со снапом)."
+    ],
+    "donts": [
+      "Don't вводить второй акцентный цвет, градиентную заливку, текстовый градиент или свечение — секция 17 их целенаправленно обнуляет.",
+      "Don't ставить радиус больше 2px (кроме круга у знака, точек и маркера уведомления).",
+      "Don't делать жёсткие смещённые тени и тени краской; тень — только мягкая, широкая, с отрицательным разбросом.",
+      "Don't собирать раздел как сетку одинаковых карточек «иконка + заголовок + текст»; сравнение — таблица, процесс — маршрут строками, предложения — две ячейки разного веса.",
+      "Don't использовать эмодзи и глифы вместо иконок: иконки только штриховые SVG (stroke-width 1.5, квадратные концы).",
+      "Don't возвращать метке фон, рамку или отступы: пометка — это текст моношрифтом.",
+      "Don't набирать моношрифтом предложения и заголовки.",
+      "Don't вводить произвольные отступы вне шкалы --sN и вторую кривую ускорения.",
+      "Don't подключать Tailwind или любой сборочный шаг к index.html и переименовывать существующие классы: они контракт для остальных страниц.",
+      "Don't заводить третью поверхность между чёрной бумагой и светлой вклейкой."
+    ]
+  }
+}
