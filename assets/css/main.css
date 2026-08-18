@@ -152,9 +152,10 @@ html { scrollbar-color: var(--stock-3) var(--stock); scrollbar-width: thin; }
 /* Разворот: поле для служебной пометки + основная полоса набора */
 .spread {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s6);
 }
+.spread > * { min-width: 0; }
 @media (min-width: 900px) {
   .spread {
     grid-template-columns: var(--rail) minmax(0, 1fr);
@@ -798,10 +799,10 @@ a.glass-card:hover, a.proof-card:hover {
 .nl-footer-inner { max-width: 1400px; margin: 0 auto; padding: 0 var(--gutter); }
 .nl-footer-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s7);
 }
-@media (min-width: 720px)  { .nl-footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 720px)  { .nl-footer-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 @media (min-width: 1000px) { .nl-footer-grid { grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: var(--s6); } }
 .nl-footer h4 {
   font-family: var(--font-spec);
@@ -949,7 +950,7 @@ a.glass-card:hover, a.proof-card:hover {
 
 .press-inner {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s7);
   align-items: end;
 }
@@ -1050,15 +1051,18 @@ a.glass-card:hover, a.proof-card:hover {
    ═══════════════════════════════════════════════════════════════════════ */
 
 .samples {
-  --card: clamp(232px, 33vw, 428px);
-  --card-h: calc(var(--card) * 0.72);   /* образцы — снимки экрана, а не обложки */
+  /* overflow: hidden не обрезает потомков 3D-контекста; clip обрезает,
+     и при этом не делает из блока контейнер прокрутки. */
+  overflow: clip;
+  --card: clamp(260px, 38vw, 560px);
+  --card-h: calc(var(--card) * 0.5);   /* снимки первых экранов кадрированы 2:1 */
   width: 100%;
 }
 
 .samples-frame {
   position: relative;
   padding: var(--s7) 0;
-  overflow: hidden;
+  overflow: clip;
   outline: none;
   perspective: calc(var(--card) * 3);
 }
@@ -1106,7 +1110,6 @@ a.glass-card:hover, a.proof-card:hover {
   width: 100%;
   height: var(--card-h);
   object-fit: cover;
-  object-position: top center;   /* макеты читаются от первого экрана */
   user-select: none;
   -webkit-user-drag: none;
   filter: saturate(0.35) contrast(1.02);
@@ -1214,7 +1217,7 @@ a.glass-card:hover, a.proof-card:hover {
 
 .offer-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1px;
   background: var(--rule);
   border: 1px solid var(--rule);
@@ -1223,6 +1226,7 @@ a.glass-card:hover, a.proof-card:hover {
 
 .offer {
   position: relative;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: var(--s5);
@@ -1233,7 +1237,14 @@ a.glass-card:hover, a.proof-card:hover {
 }
 @media (min-width: 900px) { .offer { padding: var(--s7); } }
 .offer:hover { background: var(--stock-2); }
-.offer-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s5); }
+.offer-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s3) var(--s5);
+}
+.offer-head h3 { min-width: 0; }
 .offer h3 { font-size: clamp(24px, 3vw, 34px); font-weight: 700; letter-spacing: -0.038em; }
 .offer-price {
   font-family: var(--font-display);
@@ -1265,7 +1276,7 @@ a.glass-card:hover, a.proof-card:hover {
 .route { display: grid; gap: 0; }
 .route-step {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s3);
   padding: var(--s6) 0;
   border-bottom: 1px solid var(--rule);
@@ -1391,9 +1402,9 @@ a.glass-card:hover, a.proof-card:hover {
 .sheet .link-arrow { color: var(--ink-deep); }
 .sheet ::selection { background: var(--proof-ink); color: var(--proof); }
 
-.tariff-grid { display: grid; grid-template-columns: 1fr; gap: var(--s4); }
-@media (min-width: 640px)  { .tariff-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1120px) { .tariff-grid { grid-template-columns: repeat(4, 1fr); } }
+.tariff-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+@media (min-width: 640px)  { .tariff-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+@media (min-width: 1120px) { .tariff-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .tariff-grid .pricing-card h3 {
   font-size: 19px;
   font-weight: 650;
@@ -1407,10 +1418,10 @@ a.glass-card:hover, a.proof-card:hover {
 .pricing-card.featured .btn-primary:hover { color: var(--proof-ink); }
 
 /* Бланк заказа */
-.order { display: grid; grid-template-columns: 1fr; gap: var(--s7); }
+.order { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
 @media (min-width: 980px) { .order { grid-template-columns: 0.85fr 1.15fr; gap: var(--s9); } }
-.order-row { display: grid; grid-template-columns: 1fr; gap: var(--s5); }
-@media (min-width: 560px) { .order-row { grid-template-columns: 1fr 1fr; } }
+.order-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s5); }
+@media (min-width: 560px) { .order-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 .order-note { margin-top: var(--s5); font-size: 13px; line-height: 1.5; color: var(--proof-ink-2); }
 .order-note a { color: var(--ink-deep); text-underline-offset: 3px; }
 
@@ -1449,7 +1460,7 @@ a.glass-card:hover, a.proof-card:hover {
 .slot h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--text-2); }
 .slot p { font-size: 15px; color: var(--text-3); }
 
-.blog-grid { display: grid; grid-template-columns: 1fr; gap: var(--s4); }
-@media (min-width: 700px)  { .blog-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1040px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
+.blog-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+@media (min-width: 700px)  { .blog-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+@media (min-width: 1040px) { .blog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
