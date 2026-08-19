@@ -16,7 +16,7 @@ colors:
   ink-alert: "#A8003C"
   text: "#F3F0EA"
   text-2: "#A9A69E"
-  text-3: "#7C7972"
+  text-3: "#8A877E"
   rule: "rgba(243,240,234,0.13)"
   rule-2: "rgba(243,240,234,0.26)"
   shadow-1: "rgba(0,0,0,0.55)"
