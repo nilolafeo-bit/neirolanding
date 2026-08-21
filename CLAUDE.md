@@ -64,7 +64,7 @@ sync with the CSS custom properties. When you migrate a page off Tailwind, delet
 
 ### JavaScript
 
-Three files, all plain IIFEs, all loaded with `defer`, all no-ops when their markup is absent:
+Four files, all plain IIFEs, all loaded with `defer`, all no-ops when their markup is absent:
 
 - `assets/js/main.js` — shared behaviour on every page: mobile menu, sticky nav, scroll reveal,
   FAQ accordion, order form, tariff preselect, Metrika goals. The webhook URL and the Metrika
@@ -78,9 +78,23 @@ Three files, all plain IIFEs, all loaded with `defer`, all no-ops when their mar
   markup is a scroll-snapping strip. Slide metadata is read from `data-title`, `data-subtitle`
   and a pipe-delimited `data-meta` on each `.sample`.
 
-Both ports keep the original components' math verbatim (ring folding for the infinite loop,
-power-curve falloff, edge pinning, exponential settle). If you change constants, change them
-at the top of the file where they are named and commented — the formulas below assume them.
+- `assets/js/case-strip.js` — the portfolio filmstrip on `/portfolio/`. Vanilla port of the
+  21st.dev `hero-carousel` React component. Mounts on `[data-case-strip]`. Slide data lives in
+  `data-image`, `data-title` (pipe-separated lines), `data-credit` and `data-meta` on each
+  `.strip-card`.
+
+All three ports keep the original components' math verbatim (ring folding for the infinite loop,
+power-curve falloff, edge pinning, exponential settle, and the 260/34/0.9 spring). If you change
+constants, change them at the top of the file where they are named and commented — the formulas
+below assume them.
+
+Where a port deviates from its source it is because the original's assumption does not hold
+here, and each deviation is commented at the point of change. `case-strip.js` carries three:
+neighbouring cards are clipped with `clip-path` rather than animated in height (height is
+layout, clip-path is not); cards are 2:1 top-anchored rather than 3:4 portrait, because the
+slides are screenshots whose top edge is the recognisable part; and the vertical wheel is left
+to the page instead of stepping the strip, because unlike the source this strip is a hero above
+a list and hijacking vertical scroll would trap the reader.
 
 ### Forms
 

@@ -1482,3 +1482,236 @@ a.glass-card:hover, a.proof-card:hover {
 @media (min-width: 700px)  { .blog-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 @media (min-width: 1040px) { .blog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
+
+/* ═══════════════════════════════════════════════════════════════════════
+   25. Лента оттисков — портфолио
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.strip {
+  position: relative;
+  width: 100%;
+}
+.strip-stage {
+  position: relative;
+  height: clamp(560px, 88svh, 900px);
+  overflow: hidden;
+  background: var(--stock);
+  outline: none;
+  isolation: isolate;
+}
+.strip-stage:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+
+/* ── Фон: выбранный оттиск, сведённый к одной краске ─────────────────── */
+.strip-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s var(--press);
+}
+.strip-bg.is-front { opacity: 1; }
+.strip-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  transform: scale(1.42);
+  filter: grayscale(1) contrast(1.05) blur(26px);
+}
+.strip-bg.is-zoomed img {
+  animation: strip-zoom 6s linear forwards;   /* медленный наезд камеры */
+}
+@keyframes strip-zoom { from { transform: scale(1.42); } to { transform: scale(1.28); } }
+
+/* Светимость снимка остаётся, цвет берётся у краски */
+.strip-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  mix-blend-mode: color;
+}
+.strip-ink {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Читаемость поверх фона + печатное зерно */
+.strip-wash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(10,10,12,0.62) 0%, rgba(10,10,12,0.25) 42%, rgba(10,10,12,0.78) 100%);
+}
+.strip-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+  background-size: 180px 180px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Заголовок над лентой ────────────────────────────────────────────── */
+.strip-head {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 46%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 var(--gutter) var(--s5);
+  z-index: 2;
+  pointer-events: none;
+}
+.strip-headline {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 6.4vw, 82px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+/* Каждая строка вылетает из-за своего обреза */
+.strip-line { display: block; overflow: hidden; }
+.strip-line > span {
+  display: block;
+  animation: strip-wipe 0.62s var(--press) both;
+}
+@keyframes strip-wipe { from { transform: translateY(110%); } to { transform: none; } }
+
+.strip-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s4) var(--s6);
+  margin-top: var(--s5);
+}
+.strip-credit {
+  font-family: var(--font-spec);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.85;
+}
+.strip-meta {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4) var(--s6);
+}
+.strip-meta span {
+  font-family: var(--font-spec);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--text);
+  opacity: 0.85;
+  animation: strip-rise 0.45s var(--press) both;
+}
+@keyframes strip-rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 0.85; transform: none; } }
+@media (max-width: 720px) { .strip-meta { margin-left: 0; } }
+
+/* ── Лента: общий верхний обрез, полная высота только у выбранной ────── */
+.strip-track {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  will-change: transform;
+  touch-action: pan-y;
+  cursor: grab;
+  z-index: 2;
+}
+.strip.is-dragging .strip-track { cursor: grabbing; }
+
+.strip-card {
+  flex: none;
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--stock-2);
+  cursor: pointer;
+  /* Соседи обрезаются, а не сжимаются: высота — это раскладка,
+     clip-path живёт в композиторе и не заставляет пересчитывать страницу. */
+  clip-path: inset(0 0 50% 0);
+  box-shadow: inset 0 0 0 1px rgba(243,240,234,0.1), 0 18px 34px -24px var(--shadow-3);
+  transition: clip-path 0.55s var(--press), box-shadow 0.55s var(--press);
+}
+.strip-card.is-on {
+  clip-path: inset(0 0 0 0);
+  box-shadow: inset 0 0 0 1px rgba(243,240,234,0.28), 0 22px 40px -24px var(--shadow-3);
+}
+.strip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;   /* обрезанной карточке оставляем шапку и заголовок */
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: saturate(0.25) contrast(1.03) brightness(0.82);
+  transition: filter 0.55s var(--press);
+}
+.strip-card.is-on img { filter: none; }
+
+/* ── Шкала положения ─────────────────────────────────────────────────── */
+.strip-rail {
+  position: absolute;
+  left: var(--gutter);
+  bottom: var(--s5);
+  width: 22%;
+  min-width: 128px;
+  z-index: 3;
+}
+.strip-rail-nums {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-spec);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  opacity: 0.85;
+}
+.strip-rail-line {
+  position: relative;
+  margin-top: 9px;
+  height: 1px;
+  background: rgba(243,240,234,0.28);
+}
+.strip-rail-line i {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--ink);
+  transform-origin: left;
+  transition: transform 0.55s var(--press);
+}
+
+/* Без JS лента остаётся обычной прокручиваемой полосой */
+.strip:not(.is-live) .strip-track {
+  position: static;
+  overflow-x: auto;
+  gap: var(--s4);
+  padding: 0 var(--gutter) var(--s6);
+  scroll-snap-type: x mandatory;
+}
+.strip:not(.is-live) .strip-card {
+  clip-path: none;
+  width: min(78vw, 520px);
+  height: auto;
+  aspect-ratio: 2 / 1;
+  scroll-snap-align: center;
+}
+.strip:not(.is-live) .strip-head,
+.strip:not(.is-live) .strip-rail { position: static; height: auto; padding: 0 var(--gutter); }
+.strip:not(.is-live) .strip-stage { height: auto; padding: var(--s7) 0; }

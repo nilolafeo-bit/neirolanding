@@ -23,6 +23,12 @@ colors:
   shadow-2: "rgba(0,0,0,0.85)"
   shadow-3: "rgba(0,0,0,0.95)"
 typography:
+  strip:
+    fontFamily: "Geologica, system-ui, sans-serif"
+    fontSize: "clamp(30px, 6.4vw, 82px)"
+    fontWeight: 800
+    lineHeight: 0.9
+    letterSpacing: "-0.045em"
   press:
     fontFamily: "Geologica, system-ui, sans-serif"
     fontSize: "clamp(38px, 7.4vw, 104px)"

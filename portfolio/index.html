@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Портфолио: примеры сайтов и лендингов | NeiroLanding</title>
-  <meta name="description" content="Реальные примеры сайтов, которые мы сделали для малого бизнеса: парикмахерские, автосервисы, кафе, репетиторы, фестивали. С результатами и ростом заявок." />
-  <meta name="keywords" content="портфолио лендингов, примеры сайтов, кейсы создания сайтов" />
+  <title>Портфолио: сайты и лендинги, которые мы запустили | NeiroLanding</title>
+  <meta name="description" content="Работы NeiroLanding: автосервис, салон связи, салон красоты, цветочные мастерские, цифровые продукты, медиа-проект. Первые экраны запущенных сайтов с указанием ниши, города и формата." />
+  <meta name="keywords" content="портфолио лендингов, примеры сайтов, работы студии, сайты для малого бизнеса" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="NeiroLanding" />
 
@@ -29,8 +29,8 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NeiroLanding" />
-  <meta property="og:title" content="Портфолио: примеры сайтов и лендингов | NeiroLanding" />
-  <meta property="og:description" content="Реальные примеры сайтов, которые мы сделали для малого бизнеса: парикмахерские, автосервисы, кафе, репетиторы, фестивали. С результатами и ростом заявок." />
+  <meta property="og:title" content="Портфолио: сайты и лендинги, которые мы запустили | NeiroLanding" />
+  <meta property="og:description" content="Первые экраны запущенных сайтов: ниша, город и формат по каждой работе." />
   <meta property="og:image" content="https://neirolanding.ru/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -38,8 +38,8 @@
   <meta property="og:locale" content="ru_RU" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Портфолио: примеры сайтов и лендингов | NeiroLanding" />
-  <meta name="twitter:description" content="Реальные примеры сайтов, которые мы сделали для малого бизнеса: парикмахерские, автосервисы, кафе, репетиторы, фестивали. С результатами и ростом заявок." />
+  <meta name="twitter:title" content="Портфолио: сайты и лендинги, которые мы запустили | NeiroLanding" />
+  <meta name="twitter:description" content="Первые экраны запущенных сайтов: ниша, город и формат по каждой работе." />
   <meta name="twitter:image" content="https://neirolanding.ru/og-cover.jpg" />
 
   <meta name="geo.region" content="RU" />
@@ -48,38 +48,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;600;650;700;800&family=Golos+Text:wght@400;500;600&family=Martian+Mono:wght@500;600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Geologica', 'sans-serif'],
-            body: ['Golos Text', 'sans-serif'],
-          },
-          colors: {
-            bg: '#0A0A0C',
-            surface: '#121216',
-            card: '#1A1A21',
-            border: '#26262E',
-            green: { 400: '#FF2D78', 500: '#FF2D78', 600: '#D1005B' },
-            accent: '#FF2D78',
-          },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'pulse-slow': 'pulse 4s ease-in-out infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-12px)' },
-            },
-          },
-        },
-      },
-    };
-  </script>
-
 
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -95,27 +63,38 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Главная",
-      "item": "https://neirolanding.ru/"
+      "@type": "CollectionPage",
+      "@id": "https://neirolanding.ru/portfolio/#page",
+      "url": "https://neirolanding.ru/portfolio/",
+      "name": "Портфолио NeiroLanding",
+      "description": "Сайты и лендинги, запущенные студией NeiroLanding.",
+      "inLanguage": "ru-RU",
+      "isPartOf": { "@id": "https://neirolanding.ru/#website" }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Портфолио",
-      "item": "https://neirolanding.ru/portfolio/"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://neirolanding.ru/" },
+        { "@type": "ListItem", "position": 2, "name": "Портфолио", "item": "https://neirolanding.ru/portfolio/" }
+      ]
     }
   ]
 }
 </script>
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
-<body class="">
+<body>
 
+<a href="#main" class="sr-only">Перейти к содержанию</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5zM3 5l9 7 9-7"/></symbol>
+  </defs>
+</svg>
 
 <nav class="nl-nav">
   <div class="nl-nav-inner">
@@ -132,7 +111,7 @@
       <a href="/faq/">FAQ</a>
       <a href="/generator.html">Генератор</a>
     </div>
-    <a href="/kontakty/" class="nl-nav-cta btn-primary" data-goal="cta"><span>Заказать сайт</span></a>
+    <a href="#zakaz" class="nl-nav-cta btn-primary" data-goal="cta"><span>Заказать сайт</span></a>
     <button id="menu-toggle" class="nl-burger" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
@@ -146,175 +125,271 @@
       <a href="/o-nas/">О нас</a>
       <a href="/faq/">FAQ</a>
       <a href="/generator.html">Генератор</a>
-      <a href="/kontakty/" class="btn-primary nl-mobile-cta" data-goal="cta"><span>Заказать сайт</span></a>
+      <a href="#zakaz" class="btn-primary nl-mobile-cta" data-goal="cta"><span>Заказать сайт</span></a>
     </div>
   </div>
 </nav>
 
-<nav class="nl-breadcrumbs container" aria-label="Хлебные крошки">
-  <ol>
-    <li><a href="/">Главная</a></li><li>Портфолио</li>
-  </ol>
-</nav>
+<main id="main">
 
+  <!-- ═══ ЛЕНТА ОТТИСКОВ ════════════════════════════════════════════ -->
+  <h1 class="sr-only">Портфолио NeiroLanding: сайты и лендинги, которые мы запустили</h1>
 
-<section class="section" style="padding-top: 32px;">
-  <div class="container-narrow text-center">
-    <span class="badge-green text-xs font-semibold px-4 py-1.5 rounded-full font-body inline-block mb-4">Портфолио</span>
-    <h1 class="font-display font-black text-white" style="font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin-bottom: 16px;">
-      Реальные сайты реальных клиентов
-    </h1>
-    <p style="color:#9CA3AF; font-size: 18px; line-height: 1.7;">
-      Кратко: что было, что сделали, что стало. Имена и результаты — с разрешения клиентов.
-    </p>
-  </div>
-</section>
+  <div class="strip" data-case-strip role="group" aria-roledescription="карусель" aria-label="Работы студии">
+    <div class="strip-stage" tabindex="0">
 
-<section class="section" style="padding-top: 0;">
-  <div class="container">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      
-      <article class="glass-card rounded-2xl reveal" style="overflow: hidden;">
-        <div style="position: relative; height: 200px; background: linear-gradient(135deg, rgba(74,222,128,0.08), rgba(129,140,248,0.08));">
-          <img src="/work1.jpg" alt="OVATION — агентство" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.92;" />
-          <div class="badge-green text-xs font-semibold" style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 8px;">Мероприятия</div>
-        </div>
-        <div style="padding: 22px;">
-          <h3 class="font-display font-bold text-white" style="font-size: 17px; margin-bottom: 8px;">OVATION — агентство</h3>
-          <p style="color: #9CA3AF; font-size: 14px; line-height: 1.55;">Оформили лендинг с фото-портфолио и формой подбора программы. <strong>+220% заявок</strong> за первый месяц.</p>
-        </div>
-      </article>
+      <div class="strip-bg" data-strip-bg="a"><img src="/case-avtoservis-sssr.jpg" alt="" aria-hidden="true" /></div>
+      <div class="strip-bg" data-strip-bg="b"><img src="/case-avtoservis-sssr.jpg" alt="" aria-hidden="true" /></div>
+      <div class="strip-ink" aria-hidden="true"></div>
+      <div class="strip-wash" aria-hidden="true"></div>
+      <div class="strip-grain" aria-hidden="true"></div>
 
-      
-      <article class="glass-card rounded-2xl reveal" style="overflow: hidden;">
-        <div style="position: relative; height: 200px; background: linear-gradient(135deg, rgba(74,222,128,0.08), rgba(129,140,248,0.08));">
-          <img src="/work2.jpg" alt="FITLAB — фитнес-клуб" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.92;" />
-          <div class="badge-green text-xs font-semibold" style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 8px;">Фитнес</div>
+      <div class="strip-head">
+        <p class="strip-headline" data-strip-title></p>
+        <div class="strip-facts">
+          <p class="strip-credit" data-strip-credit></p>
+          <div class="strip-meta" data-strip-meta></div>
         </div>
-        <div style="padding: 22px;">
-          <h3 class="font-display font-bold text-white" style="font-size: 17px; margin-bottom: 8px;">FITLAB — фитнес-клуб</h3>
-          <p style="color: #9CA3AF; font-size: 14px; line-height: 1.55;">Лендинг фитнес-клуба с расписанием, онлайн-записью на пробное занятие и оплатой клубных карт. <strong>+5× записей</strong> через сайт.</p>
-        </div>
-      </article>
+      </div>
 
-      
-      <article class="glass-card rounded-2xl reveal" style="overflow: hidden;">
-        <div style="position: relative; height: 200px; background: linear-gradient(135deg, rgba(74,222,128,0.08), rgba(129,140,248,0.08));">
-          <img src="/work3.jpg" alt="IT-bootcamp по Python" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.92;" />
-          <div class="badge-green text-xs font-semibold" style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 8px;">IT-курсы</div>
-        </div>
-        <div style="padding: 22px;">
-          <h3 class="font-display font-bold text-white" style="font-size: 17px; margin-bottom: 8px;">IT-bootcamp по Python</h3>
-          <p style="color: #9CA3AF; font-size: 14px; line-height: 1.55;">Лендинг для IT-школы: программа Junior → Middle, истории учеников, оплата в рассрочку и бесплатный старт. Окупился за 3 дня после запуска.</p>
-        </div>
-      </article>
+      <div class="strip-track">
+        <button type="button" class="strip-card" data-case
+                data-image="/case-avtoservis-sssr.jpg"
+                data-title="Автосервис|СССР"
+                data-credit="Диагностика с подъёмником"
+                data-meta="Лендинг | Автосервис | Красноярск">
+          <img src="/case-avtoservis-sssr.jpg" alt="Первый экран лендинга автосервиса СССР в Красноярске" width="1600" height="800" />
+        </button>
+        <button type="button" class="strip-card" data-case
+                data-image="/case-unomobile.jpg"
+                data-title="UnoMobile"
+                data-credit="Салон связи и ремонт телефонов"
+                data-meta="Лендинг | Ремонт техники | Волгоград">
+          <img src="/case-unomobile.jpg" alt="Первый экран лендинга салона связи UnoMobile в Волгограде" loading="lazy" width="1600" height="800" />
+        </button>
+        <button type="button" class="strip-card" data-case
+                data-image="/case-olcha.jpg"
+                data-title="Ольха"
+                data-credit="Салон красоты"
+                data-meta="Лендинг | Красота | Кострома">
+          <img src="/case-olcha.jpg" alt="Первый экран лендинга салона красоты «Ольха» в Костроме" loading="lazy" width="1600" height="800" />
+        </button>
+        <button type="button" class="strip-card" data-case
+                data-image="/case-stebel.jpg"
+                data-title="Стебель"
+                data-credit="Цветочная мастерская"
+                data-meta="Лендинг | Цветы | Ярославль">
+          <img src="/case-stebel.jpg" alt="Первый экран лендинга цветочной мастерской «Стебель» в Ярославле" loading="lazy" width="1600" height="800" />
+        </button>
+        <button type="button" class="strip-card" data-case
+                data-image="/case-bloom.jpg"
+                data-title="BLOOM"
+                data-credit="Доставка живых цветов"
+                data-meta="Лендинг | Цветы | 7 секций">
+          <img src="/case-bloom.jpg" alt="Первый экран лендинга цветочной студии BLOOM" loading="lazy" width="1600" height="800" />
+        </button>
+        <button type="button" class="strip-card" data-case
+                data-image="/case-samara.jpg"
+                data-title="Цветочный|магазин"
+                data-credit="Букеты и цветы поштучно"
+                data-meta="Лендинг | Цветы | Самара">
+          <img src="/case-samara.jpg" alt="Первый экран лендинга цветочного магазина в Самаре" loading="lazy" width="1600" height="800" />
+        </button>
+        <button type="button" class="strip-card" data-case
+                data-image="/case-thehub.jpg"
+                data-title="THE HUB"
+                data-credit="Интерактивный гид по чемпионату мира 2026"
+                data-meta="Лендинг | Медиа-проект | English">
+          <img src="/case-thehub.jpg" alt="Первый экран интерактивного проекта THE HUB о чемпионате мира 2026" loading="lazy" width="1600" height="800" />
+        </button>
+        <button type="button" class="strip-card" data-case
+                data-image="/case-delay-delo.jpg"
+                data-title="Делай|Дело"
+                data-credit="Цифровые продукты для самозанятых и ИП"
+                data-meta="Сайт | Цифровые товары | Самозанятые и ИП">
+          <img src="/case-delay-delo.jpg" alt="Первый экран сайта «Делай Дело» с цифровыми продуктами для самозанятых и ИП" loading="lazy" width="1600" height="800" />
+        </button>
+        <button type="button" class="strip-card" data-case
+                data-image="/case-english.jpg"
+                data-title="Гайды по|английскому"
+                data-credit="Каталог PDF-гайдов по профессиям"
+                data-meta="Лендинг | Обучение | PDF-гайды">
+          <img src="/case-english.jpg" alt="Первый экран лендинга каталога PDF-гайдов по английскому языку" loading="lazy" width="1600" height="800" />
+        </button>
+      </div>
 
-      
-      <article class="glass-card rounded-2xl reveal" style="overflow: hidden;">
-        <div style="position: relative; height: 200px; background: linear-gradient(135deg, rgba(74,222,128,0.08), rgba(129,140,248,0.08));">
-          <img src="/work4.jpg" alt="NEOFEST — digital-фестиваль" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.92;" />
-          <div class="badge-green text-xs font-semibold" style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 8px;">Фестиваль</div>
+      <div class="strip-rail">
+        <div class="strip-rail-nums">
+          <span data-strip-now>01</span>
+          <span data-strip-all>09</span>
         </div>
-        <div style="padding: 22px;">
-          <h3 class="font-display font-bold text-white" style="font-size: 17px; margin-bottom: 8px;">NEOFEST — digital-фестиваль</h3>
-          <p style="color: #9CA3AF; font-size: 14px; line-height: 1.55;">Премиум-сайт фестиваля: программа, спикеры, локация, билеты и обратный отсчёт до старта. <strong>400 билетов</strong> за первые 3 дня.</p>
-        </div>
-      </article>
+        <div class="strip-rail-line"><i data-strip-bar></i></div>
+      </div>
 
-      
-      <article class="glass-card rounded-2xl reveal" style="overflow: hidden;">
-        <div style="position: relative; height: 200px; background: linear-gradient(135deg, rgba(74,222,128,0.08), rgba(129,140,248,0.08));">
-          <img src="/work5.jpg" alt="Ремесленная пекарня" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.92;" />
-          <div class="badge-green text-xs font-semibold" style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 8px;">Пекарня</div>
-        </div>
-        <div style="padding: 22px;">
-          <h3 class="font-display font-bold text-white" style="font-size: 17px; margin-bottom: 8px;">Ремесленная пекарня</h3>
-          <p style="color: #9CA3AF; font-size: 14px; line-height: 1.55;">Лендинг пекарни с меню, предзаказом и доставкой. Клиенты оформляют хлеб прямо с телефона — освободили звонящую линию и убрали очередь у прилавка.</p>
-        </div>
-      </article>
-
-      
-      <article class="glass-card rounded-2xl reveal" style="overflow: hidden;">
-        <div style="position: relative; height: 200px; background: linear-gradient(135deg, rgba(74,222,128,0.08), rgba(129,140,248,0.08));">
-          <img src="/work6.jpg" alt="lumex PRO — онлайн-школа профессий" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.92;" />
-          <div class="badge-green text-xs font-semibold" style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 8px;">Образование</div>
-        </div>
-        <div style="padding: 22px;">
-          <h3 class="font-display font-bold text-white" style="font-size: 17px; margin-bottom: 8px;">lumex PRO — онлайн-школа</h3>
-          <p style="color: #9CA3AF; font-size: 14px; line-height: 1.55;">Многостраничный сайт онлайн-академии: каталог курсов, эксперты, истории учеников и оплата. SEO под «онлайн-курсы» — стабильный поток заявок.
-        </div>
-      </article>
-
-    </div>
-
-    <div class="glass-card rounded-2xl reveal" style="padding: 32px; margin-top: 40px;">
-      <h2 class="font-display font-bold text-white" style="font-size: 22px; margin-bottom: 12px;">
-        Хотите попасть в это портфолио?
-      </h2>
-      <p style="color:#9CA3AF; line-height: 1.6; margin-bottom: 18px;">
-        Делаем сайты, которые приятно показывать. Если решение получается красивым — добавляем в портфолио и приводим к нему трафик. Это бесплатная реклама вам.
-      </p>
-      <a href="/kontakty/" class="btn-primary font-display font-semibold text-white" style="display:inline-block; padding: 12px 24px; border-radius: 12px; font-size: 14px;">
-        Обсудить сайт →
-      </a>
+      <p class="sr-only" data-strip-live aria-live="polite"></p>
     </div>
   </div>
-</section>
 
+  <!-- ═══ NL-01 · ОПИСЬ ═════════════════════════════════════════════ -->
+  <section class="section" id="opis">
+    <div class="container">
+      <div class="spread">
+        <p class="folio"><span>NL-01</span><span>Опись работ</span></p>
+        <div>
+          <h2 class="h-section reveal">Что мы запустили</h2>
+          <p class="h-sub reveal" data-delay="1">
+            Девять работ: от лендинга автосервиса на один экран до сайта
+            с калькулятором и блогом. Ниже — формат, ниша и город по каждой.
+            Метрик здесь нет намеренно: мы показываем то, что сделали,
+            а не обещания того, что это принесёт.
+          </p>
 
-<section class="section" id="cta-section">
-  <div class="container-narrow">
-    <div class="text-center reveal" style="margin-bottom: 40px;">
-      <span class="badge-green text-xs font-semibold px-4 py-1.5 rounded-full font-body inline-block mb-4">Заявка</span>
-      <h2 class="font-display font-black text-2xl sm:text-3xl md:text-4xl text-white">Готовы запустить сайт?</h2>
-      <p style="color:#9CA3AF; margin-top: 12px; font-size: 16px;">Оставьте заявку — пришлём примеры под вашу нишу и обсудим запуск за 1 день.</p>
+          <div class="route reveal" data-delay="2" style="margin-top:var(--s7)">
+            <div class="route-step">
+              <p class="route-when">Лендинг</p>
+              <h3>Автосервис СССР</h3>
+              <p>Диагностика с подъёмником, Красноярск. Первый экран объясняет, что видно мастеру и не видно владельцу.</p>
+            </div>
+            <div class="route-step">
+              <p class="route-when">Лендинг</p>
+              <h3>UnoMobile</h3>
+              <p>Салон связи и ремонт телефонов, Волгоград. Разбор устройства по слоям вместо списка услуг.</p>
+            </div>
+            <div class="route-step">
+              <p class="route-when">Лендинг</p>
+              <h3>Ольха</h3>
+              <p>Салон красоты, Кострома. Цена, аппарат и мастер показаны до записи, а не «на консультации».</p>
+            </div>
+            <div class="route-step">
+              <p class="route-when">Лендинг</p>
+              <h3>Стебель</h3>
+              <p>Цветочная мастерская, Ярославль. Фотография собранного букета уходит клиенту до отправки курьера.</p>
+            </div>
+            <div class="route-step">
+              <p class="route-when">Лендинг</p>
+              <h3>BLOOM</h3>
+              <p>Доставка живых цветов. Семь секций, крупный образ на первом экране вместо каталога.</p>
+            </div>
+            <div class="route-step">
+              <p class="route-when">Лендинг</p>
+              <h3>Цветочный магазин</h3>
+              <p>Букеты и цветы поштучно, Самара. Можно взять один цветок, а можно собрать букет.</p>
+            </div>
+            <div class="route-step">
+              <p class="route-when">Лендинг</p>
+              <h3>THE HUB</h3>
+              <p>Интерактивный гид по чемпионату мира 2026 на английском: обратный отсчёт, карта стадионов, конструктор постера.</p>
+            </div>
+            <div class="route-step">
+              <p class="route-when">Сайт</p>
+              <h3>Делай Дело</h3>
+              <p>Цифровые продукты для самозанятых и ИП: калькулятор, разделы по маркетплейсам, блог и FAQ.</p>
+            </div>
+            <div class="route-step">
+              <p class="route-when">Лендинг</p>
+              <h3>Гайды по английскому</h3>
+              <p>Каталог платных PDF-гайдов по профессиям. Наборная типографика вместо стоковых фотографий.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-<form id="order-form" class="glass-card rounded-2xl p-6 sm:p-8" novalidate>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div>
-      <label class="nl-label" for="name">Имя</label>
-      <input class="nl-input" type="text" id="name" name="name" placeholder="Как к вам обращаться" required />
+  </section>
+
+  <!-- ═══ NL-02 · КАК ПОПАСТЬ СЮДА ══════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="spread">
+        <p class="folio"><span>NL-02</span><span>Условие</span></p>
+        <div>
+          <h2 class="h-section reveal">Как попасть в эту опись</h2>
+          <p class="h-sub reveal" data-delay="1">
+            Если сайт получается таким, что его приятно показывать, мы просим
+            разрешения добавить его сюда и ведём на страницу трафик. Для вас
+            это бесплатная реклама, для нас — работающая витрина. Отказ ничего
+            не меняет: сайт всё равно ваш, и код тоже.
+          </p>
+          <p class="reveal" data-delay="2" style="margin-top:var(--s6)">
+            <a href="#zakaz" class="link-arrow" data-goal="cta">Обсудить свой сайт <svg class="ic ic-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </p>
+        </div>
+      </div>
     </div>
-    <div>
-      <label class="nl-label" for="contact">Контакт</label>
-      <input class="nl-input" type="text" id="contact" name="contact" placeholder="Telegram, WhatsApp или e-mail" required />
+  </section>
+
+  <!-- ═══ NL-03 · БЛАНК ЗАКАЗА ══════════════════════════════════════ -->
+  <section class="section sheet" id="zakaz">
+    <div class="container">
+      <div class="order">
+        <div>
+          <p class="folio" style="margin-bottom:var(--s5)"><span>NL-03</span><span>Бланк заказа</span></p>
+          <h2 class="h-section">Запустим ваш сайт</h2>
+          <p class="h-sub">
+            Заполните четыре поля. Пришлём примеры под вашу нишу, назовём срок
+            и запустим сайт, обычно в тот же день.
+          </p>
+          <p style="margin-top:var(--s6)">
+            <span class="stamp">Ответ в течение 15 минут</span>
+          </p>
+          <p class="order-note">
+            Или напишите напрямую:
+            <a href="mailto:aiinformatorbot@gmail.com">aiinformatorbot@gmail.com</a>
+          </p>
+        </div>
+
+        <form id="order-form" class="order-form" novalidate>
+          <div class="order-row">
+            <div class="field">
+              <label class="nl-label" for="name">Имя</label>
+              <input class="nl-input" type="text" id="name" name="name" autocomplete="name" placeholder="Как к вам обращаться" required />
+              <p class="field-error" data-error-for="name">Укажите имя</p>
+            </div>
+            <div class="field">
+              <label class="nl-label" for="contact">Телефон, Telegram или почта</label>
+              <input class="nl-input" type="text" id="contact" name="contact" autocomplete="tel" placeholder="+7 900 000-00-00" required />
+              <p class="field-error" data-error-for="contact">Оставьте контакт для ответа</p>
+            </div>
+          </div>
+
+          <div class="order-row">
+            <div class="field">
+              <label class="nl-label" for="business">Тип бизнеса</label>
+              <input class="nl-input" type="text" id="business" name="business" placeholder="Кафе, автосервис, курсы…" required />
+              <p class="field-error" data-error-for="business">Напишите, чем занимаетесь</p>
+            </div>
+            <div class="field">
+              <label class="nl-label" for="tariff">Тариф</label>
+              <select class="nl-select" id="tariff" name="tariff">
+                <option value="">Не выбран — обсудим</option>
+                <option value="basic">Базовый лендинг — 2 990 ₽</option>
+                <option value="optimal">Улучшенный лендинг — 4 990 ₽</option>
+                <option value="premium">Многостраничный сайт — 7 990 ₽</option>
+                <option value="premium-plus">Сайт + SEO и блог — 11 990 ₽</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="nl-label" for="message">Комментарий</label>
+            <textarea class="nl-textarea" id="message" name="message" placeholder="Референсы, сроки, пожелания — необязательно"></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn-primary btn-wide" style="margin-top:var(--s5)">
+            <span id="btn-text">Отправить заявку</span>
+            <svg class="ic ic-sm" id="btn-spinner" aria-hidden="true" style="display:none" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" opacity="0.3"/><path d="M21 12a9 9 0 0 0-9-9"/>
+            </svg>
+          </button>
+
+          <p class="order-note">
+            Нажимая «Отправить заявку», вы соглашаетесь с обработкой персональных данных.
+          </p>
+        </form>
+      </div>
     </div>
-  </div>
-  <div style="margin-top: 16px;">
-    <label class="nl-label" for="business">Тип бизнеса</label>
-    <input class="nl-input" type="text" id="business" name="business" placeholder="Парикмахерская, автосервис, фестиваль…" required />
-  </div>
-  <div style="margin-top: 16px;">
-    <label class="nl-label" for="tariff">Тариф</label>
-    <select class="nl-select" id="tariff" name="tariff">
-      <option value="" selected>Не выбран — обсудим</option>
-<option value="basic" >Базовый лендинг — 2 990 ₽</option>
-<option value="optimal" >Улучшенный лендинг — 4 990 ₽</option>
-<option value="premium" >Многостраничный сайт — 7 990 ₽</option>
-<option value="premium-plus" >Сайт + SEO и блог — 11 990 ₽</option>
-    </select>
-  </div>
-  <div style="margin-top: 16px;">
-    <label class="nl-label" for="message">Комментарий (необязательно)</label>
-    <textarea class="nl-textarea" id="message" name="message" placeholder="Что важно учесть, ссылки на референсы…"></textarea>
-  </div>
-  <button type="submit" id="submit-btn" class="btn-primary w-full font-display font-bold text-white" style="margin-top: 22px; padding: 16px; border-radius: 16px; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-    <span id="btn-text">Отправить заявку</span>
-    <svg id="btn-spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
-    </svg>
-  </button>
-  <p style="margin-top: 12px; font-size: 12px; color: #6B7280; text-align: center;">
-    Нажимая «Отправить заявку», вы соглашаетесь с обработкой персональных данных. Свяжемся с вами в течение 15 минут.
-  </p>
-</form>
+  </section>
 
-  </div>
-</section>
-
-
+</main>
 
 <footer class="nl-footer">
   <div class="nl-footer-inner">
@@ -329,7 +404,7 @@
           От 2 990 ₽, готово за 1 день, хостинг бесплатно навсегда.
         </p>
         <a href="mailto:aiinformatorbot@gmail.com" class="link-arrow" style="margin-top:var(--s4); color:var(--text-2)">
-          <svg class="ic ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h18v14H3V5zM3 5l9 7 9-7"/></svg> aiinformatorbot@gmail.com
+          <svg class="ic ic-sm" aria-hidden="true"><use href="#i-mail"/></svg> aiinformatorbot@gmail.com
         </a>
       </div>
 
@@ -357,7 +432,7 @@
         <h4>Запуск</h4>
         <nav>
           <a href="/kontakty/">Контакты</a>
-          <a href="/kontakty/" data-goal="cta">Оставить заявку</a>
+          <a href="#zakaz" data-goal="cta">Оставить заявку</a>
           <a href="mailto:aiinformatorbot@gmail.com">Написать на почту</a>
         </nav>
       </div>
@@ -369,9 +444,10 @@
     </div>
   </div>
 </footer>
-<div id="toast" class="toast"></div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
 <script src="/assets/js/main.js" defer></script>
-
-
+<script src="/assets/js/case-strip.js" defer></script>
 </body>
 </html>
