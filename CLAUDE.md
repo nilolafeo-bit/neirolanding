@@ -84,8 +84,14 @@ at the top of the file where they are named and commented — the formulas below
 
 ### Forms
 
-The order form posts JSON to an n8n webhook and reports via a toast; there is no backend in
-this repo. Validation is client-side only and lives in `initForm`. Metrika goals
+The order form posts JSON to `form-relay`, a small Express service on the owner's own VPS
+(`https://hooks.neirolanding.ru/api/submit/neirolanding`), and reports via a toast; there is no
+backend in this repo. That service prints every field it receives as `key: value` into the
+notification, which is why the payload keys in `initForm` are Russian labels rather than code
+names — renaming them changes what the owner reads in the notification. It also requires the
+site's exact `Origin` to be whitelisted server-side, drops submissions whose hidden `_hp`
+honeypot is filled, and rate-limits to 20 per IP per 10 minutes. Validation is client-side only
+and lives in `initForm`. Metrika goals
 (`form_submit_success`, `form_submit_error`, `cta_click`, `email_click`, `blog_read`) are
 already wired to real conversion tracking — renaming them breaks reporting the owner depends on.
 

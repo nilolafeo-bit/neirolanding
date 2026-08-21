@@ -5,8 +5,12 @@
 (function () {
   'use strict';
 
-  // Webhook URL (НЕ менять — оставлен по требованию владельца)
-  const WEBHOOK_URL = 'https://ai-konfu-u70272.vm.elestio.app/webhook/neirolanding';
+  // Приём заявок — form-relay на своём сервере в РФ.
+  // Контракт: POST, тело JSON, ответ {ok:true}. Имена полей произвольные —
+  // сервис печатает их в письмо как «ключ: значение», поэтому ключи русские.
+  // Origin сайта прописан в allowedOrigins этого site_id на сервере,
+  // иначе приёмник ответит 403 origin_not_allowed.
+  const RELAY_URL = 'https://hooks.neirolanding.ru/api/submit/neirolanding';
   const METRIKA_ID = 108781023;
 
   function goal(name, params) {
@@ -128,6 +132,25 @@
       if (input) input.addEventListener('input', () => clearError(id));
     });
 
+    // Ловушка для ботов: человеку поле не видно и остаётся пустым, боты
+    // заполняют всё подряд. Приёмник молча отбрасывает такие заявки.
+    const honeypot = document.createElement('input');
+    honeypot.type = 'text';
+    honeypot.name = '_hp';
+    honeypot.tabIndex = -1;
+    honeypot.autocomplete = 'off';
+    honeypot.setAttribute('aria-hidden', 'true');
+    honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0';
+    form.appendChild(honeypot);
+
+    // В письмо должен уходить текст тарифа, а не служебный код вроде "optimal"
+    function tariffLabel() {
+      const select = document.getElementById('tariff');
+      if (!select || !select.value) return 'не выбран';
+      const option = select.options[select.selectedIndex];
+      return option ? option.text.trim() : select.value;
+    }
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
@@ -162,20 +185,26 @@
       if (btnText) btnText.textContent = 'Отправляем…';
       if (spinner) spinner.style.display = '';
 
-      const payload = Object.assign({}, trimmed, {
-        source: window.location.href,
-        page: window.location.pathname,
-        referer: document.referrer || '',
-        timestamp: new Date().toISOString(),
-      });
+      // Время приёмник проставляет сам, поэтому здесь его нет
+      const payload = {
+        'Имя': trimmed.name,
+        'Контакт': trimmed.contact,
+        'Тип бизнеса': trimmed.business,
+        'Тариф': tariffLabel(),
+        'Страница': window.location.pathname,
+        '_hp': honeypot.value,
+      };
+      if (trimmed.message) payload['Комментарий'] = trimmed.message;
+      if (document.referrer) payload['Источник перехода'] = document.referrer;
 
       try {
-        const res = await fetch(WEBHOOK_URL, {
+        const res = await fetch(RELAY_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.ok) throw new Error(data.error || 'http_' + res.status);
 
         showToast('Заявка принята. Ответим в течение 15 минут.');
         form.reset();
@@ -184,7 +213,15 @@
           page: window.location.pathname,
         });
       } catch (err) {
-        showToast('Не удалось отправить заявку. Напишите на aiinformatorbot@gmail.com — ответим так же быстро.', true);
+        // Приёмник ограничивает 20 заявками с адреса за 10 минут — про это
+        // человеку стоит сказать прямо, иначе он будет жать кнопку впустую.
+        const tooMany = String(err && err.message) === 'too_many_requests';
+        showToast(
+          tooMany
+            ? 'Слишком много заявок с вашего адреса. Попробуйте через 10 минут или напишите на aiinformatorbot@gmail.com.'
+            : 'Не удалось отправить заявку. Напишите на aiinformatorbot@gmail.com — ответим так же быстро.',
+          true
+        );
         goal('form_submit_error');
       } finally {
         if (submitBtn) submitBtn.disabled = false;
