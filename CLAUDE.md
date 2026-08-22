@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 `neirolanding.ru` — the marketing site of a one-person studio that sells turnkey landing pages
 and small multi-page sites to Russian small businesses. All copy is Russian.
 
-It is a **static site with no build step**: hand-written HTML, one shared stylesheet, three
+It is a **static site with no build step**: hand-written HTML, one shared stylesheet, five
 vanilla JS files. It is served by GitHub Pages from the repo root, with `CNAME` binding the
 apex domain. There is no framework, no bundler, no `package.json`, and adding one would break
 the deploy. Every `.html` file is both the source and the artifact.
@@ -34,7 +34,7 @@ staging environment, so anything merged is live on the public domain within a mi
 ### Shared chrome is duplicated, not templated
 
 There is no include mechanism. The `<nav class="nl-nav">` block and the `<footer class="nl-footer">`
-block are **copy-pasted into all 22 pages**. Editing one page's header fixes one page.
+block are **copy-pasted into all 21 content pages**. Editing one page's header fixes one page.
 
 To change the header or footer, write a Node script that regex-replaces the whole
 `<nav class="nl-nav">…</nav>` and `<footer class="nl-footer">…</footer>` blocks across every
@@ -54,17 +54,24 @@ The design system itself is documented in `DESIGN.md`. The short version: black 
 paper-white inserts, one magenta printing ink, hairline rules, 2px corners, and a single
 easing curve (`--press`) used for every transition on the site.
 
-### `index.html` is the only page on the current system
+### The migration off Tailwind is half-finished
 
-The home page was rebuilt against the current design system and no longer loads Tailwind.
-**The other 21 pages still load `cdn.tailwindcss.com`** and still use Tailwind utility classes
-in their body markup, so their `tailwind.config` block (fonts and color tokens) has to stay in
-sync with the CSS custom properties. When you migrate a page off Tailwind, delete its CDN
-`<script>` and its config block in the same edit.
+Three pages have been rebuilt against the current design system and no longer load Tailwind:
+`index.html`, `portfolio/index.html`, and `uslugi/index.html`. **The remaining 18 HTML files
+still load `cdn.tailwindcss.com`** and still use Tailwind utility classes in their body markup,
+so their `tailwind.config` block (fonts and color tokens) has to stay in sync with the CSS
+custom properties. When you migrate a page off Tailwind, delete its CDN `<script>` and its
+config block in the same edit.
+
+Check the current split rather than trusting this paragraph:
+
+```bash
+grep -rL "cdn.tailwindcss.com" --include="*.html" .
+```
 
 ### JavaScript
 
-Four files, all plain IIFEs, all loaded with `defer`, all no-ops when their markup is absent:
+Five files, all plain IIFEs, all loaded with `defer`, all no-ops when their markup is absent:
 
 - `assets/js/main.js` — shared behaviour on every page: mobile menu, sticky nav, scroll reveal,
   FAQ accordion, order form, tariff preselect, Metrika goals. The webhook URL and the Metrika
@@ -83,7 +90,13 @@ Four files, all plain IIFEs, all loaded with `defer`, all no-ops when their mark
   `data-image`, `data-title` (pipe-separated lines), `data-credit` and `data-meta` on each
   `.strip-card`.
 
-All three ports keep the original components' math verbatim (ring folding for the infinite loop,
+- `assets/js/paths-field.js` — the registration field behind the `/uslugi/` hero. Vanilla port of
+  the 21st.dev `background-paths` React component. Mounts on `[data-paths-field]` and splits
+  `[data-paths-title]` into per-letter spans. The curve family's math is the original's, but the
+  motion is a `stroke-dasharray`/`stroke-dashoffset` cycle rather than framer-motion, so the
+  compositor draws the frames instead of JavaScript.
+
+All four ports keep the original components' math verbatim (ring folding for the infinite loop,
 power-curve falloff, edge pinning, exponential settle, and the 260/34/0.9 spring). If you change
 constants, change them at the top of the file where they are named and commented — the formulas
 below assume them.
@@ -114,3 +127,10 @@ already wired to real conversion tracking — renaming them breaks reporting the
 Each page carries hand-written meta, OpenGraph, and JSON-LD. `sitemap.xml` is maintained by
 hand and lists every URL, so a new page needs an entry there and existing URLs must not move —
 they are indexed. Blog posts live at `blog/<slug>/index.html` with a sibling `cover.jpg`.
+
+GitHub Pages serves no redirects, so a retired URL cannot 301. `tarify/index.html` is the
+worked example of the alternative: the tariffs moved into `/uslugi/#tarify`, and what is left
+at the old path is a bare stub carrying `canonical` to the survivor, `noindex, follow`, and
+a `meta refresh`. Retire any other indexed URL the same way, and drop its `sitemap.xml` entry
+in the same edit. Anchors compensate for the sticky header through a single `main [id]
+{ scroll-margin-top }` rule near the top of the stylesheet — new in-page targets need nothing.
